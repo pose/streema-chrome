@@ -57,7 +57,7 @@ $ = function (id) { return document.getElementById(id); };
         }
     }
 
-    streema.player.status =  streema.player.status || '';
+    streema.player.status =  streema.player.status || 'Loading...';
 
     streema.player.stop = function () {
         if ( window.event && window.event.preventDefault)
@@ -170,30 +170,35 @@ $ = function (id) { return document.getElementById(id); };
             if ( selected.length > 0 ) {
                 selected[0].scrollIntoView(false);
             }
+            
+            streema.player.status = 'Ready'
+            streema.player.updateStatus();
+
                 
             
             if (streema.radios.length == 0) {
 
-                $('radios').innerHTML = sprintf('<span class="error">%s \
+                streema.player.status = sprintf('<span class="error">%s \
                         <a href="http://streema.com/account/login" target="_blank">%s</a>%s\
                         </span>',
                     'No radios found, are you',
                     'logged in',
                     '?');
+                streema.player.updateStatus();
             }
+        _gaq.push(['_trackEvent', 'Streema icon', 'clicked']);
         }
     };
 
-    window.onload = function() {
+//    window.onload = function() {
         //Entry point
         // Google Analytics
-        _gaq.push(['_trackEvent', 'Streema icon', 'clicked']);
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = renderRadios;
         renderRadios.xhr = xhr;
         streema.player.updateStatus();
         xhr.open('GET','http://streema.com/playlists?noCache=1272826630207', true);
         xhr.send();
-    };
+//    };
 }());
 
