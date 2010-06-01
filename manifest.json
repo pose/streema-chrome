@@ -18,5 +18,5 @@
     "notifications"
   ],
   "options_page": "options.html",
-  "minimum_chrome_version": "4.0.302.2"
+  "minimum_chrome_version": "5"
 }
