@@ -1,0 +1,18 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="streema.css" />
+      <script type="text/javascript" src="ext/sprintf.js"></script>
+      <script type="text/javascript" src="config.js"></script>
+   </head>
+   <body class="notification">
+      <script>
+         (function() {
+         var streema = chrome.extension.getBackgroundPage().streema;
+         var status = streema.display.status;
+         document.write( sprintf('<img src="%s" /><div id="title">%s</div><div id="body">%s</div>', 'img/streema_logo_alt2.png', status.title, status.body));
+         setTimeout( function () { window.close() }, streema.config['notifications.timeout']);
+         }());
+      </script>
+   </body>
+</html>
+
