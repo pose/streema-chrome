@@ -57,7 +57,7 @@ $ = function (id) { return document.getElementById(id); };
         }
     }
 
-    streema.player.status =  streema.player.status || 'Loading...';
+    streema.player.status =  streema.player.status || 'Ready';
 
     streema.player.stop = function () {
         if ( window.event && window.event.preventDefault)
@@ -139,10 +139,22 @@ $ = function (id) { return document.getElementById(id); };
 
     };   
 
-    var renderRadios =  function() {
-        if ( renderRadios.xhr.readyState == 4 ) {
-            streema.radios = JSON.parse(renderRadios.xhr.responseText)
-            streema.radios = streema.radios.sort(function (a,b) {
+    var oldStatus;
+    var drawRadios = function(radios) {
+            if ( typeof radios == 'undefined' ) {
+                oldStatus = streema.player.status;
+                streema.player.status = 'Loading radios from Streema...'
+                streema.player.updateStatus();        
+                if (!streema.radios) {
+                    return;
+                } 
+                radios = streema.radios;
+            } else {
+                streema.player.status = oldStatus;
+                streema.player.updateStatus();
+            }
+
+            streema.radios = radios.sort(function (a,b) {
                 a = a.name.toLowerCase();
                 b = b.name.toLowerCase();
                 
@@ -171,11 +183,6 @@ $ = function (id) { return document.getElementById(id); };
                 selected[0].scrollIntoView(false);
             }
             
-            streema.player.status = 'Ready'
-            streema.player.updateStatus();
-
-                
-            
             if (streema.radios.length == 0) {
 
                 streema.player.status = sprintf('<span class="error">%s \
@@ -187,18 +194,20 @@ $ = function (id) { return document.getElementById(id); };
                 streema.player.updateStatus();
             }
         _gaq.push(['_trackEvent', 'Streema icon', 'clicked']);
+    }
+
+    var renderRadios =  function() {
+        if ( renderRadios.xhr.readyState == 4 ) {
+            drawRadios(JSON.parse(renderRadios.xhr.responseText))
         }
     };
 
-//    window.onload = function() {
-        //Entry point
-        // Google Analytics
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = renderRadios;
-        renderRadios.xhr = xhr;
-        streema.player.updateStatus();
-        xhr.open('GET','http://streema.com/playlists?noCache=1272826630207', true);
-        xhr.send();
-//    };
+    drawRadios();
+    xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = renderRadios;
+    renderRadios.xhr = xhr;
+    xhr.open('GET','http://streema.com/playlists?noCache=1272826630207', true);
+    // Spawn another thread (or at least don't do the send)
+    window.setTimeout(function () { xhr.send() } , 0)
 }());
 
