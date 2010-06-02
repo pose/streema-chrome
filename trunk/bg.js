@@ -33,7 +33,7 @@ var background = chrome.extension.getBackgroundPage();
         throw new Error('config.js must be loaded first')
     }
     streema.player = streema.player || {};
-    streema.radios = streema.radio || [];
+    streema.radios = false;
     streema.player.selectedRadio = null;
 
     streema.display = function (msg, badge) {
