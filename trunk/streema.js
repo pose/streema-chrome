@@ -57,7 +57,7 @@ $ = function (id) { return document.getElementById(id); };
         }
     }
 
-    streema.player.status =  streema.player.status || 'Ready';
+    streema.player.status =  streema.player.status || 'Click on a radio station above to start listening';
 
     streema.player.stop = function () {
         if ( window.event && window.event.preventDefault)
