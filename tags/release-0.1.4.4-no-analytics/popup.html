@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="streema.css" />
+   </head>
+   <body class="popup">
+      <div id="head">
+         <a href="http://streema.com" target="_blank">
+            <span id="favorites">Favorites</span>
+            <img id="logo" src="http://static1.streema.com/images/banners/streema_online_radio_stations_77x15.png" alt="Radio Player for Streema" />
+         </a>
+      </div>
+      <div id="playlist">
+         <div id="radios"></div>
+      </div>
+      <hr />
+      <div id="status">
+        Loading... 
+      </div>
+      <div id="share">
+         Share on:
+            <a href="http://twitter.com/home?status=Check+the+new+Streema+Chrome+Extension!+http://bit.ly/streema-chrome+%23streema+%23chrome" target="_blank">Twitter</a>
+            <a href="http://www.facebook.com/sharer.php?u=bit.ly/streema-chrome&t=Check+the+new+Streema+Chrome+Extension" target="_blank">Facebook</a>
+      </div>
+      <div id="foot">
+            <img id="play-button" title="Play" src="img/play.png" onclick="streema.player.play(); return false;" />
+            <img id="stop-button" title="Stop" src="img/stop.png" onclick="streema.player.stop(); return false;"/>
+            <a href="faq.html" target="_blank">FAQs</a>
+      </div>
+        
+
+      <script type="text/javascript" src="ext/sprintf.js"></script>
+      <script type="text/javascript" src="streema.js"></script>
+   </body>
+</html>
+
