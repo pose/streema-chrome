@@ -10,7 +10,7 @@
             throw new Error('Invalid Google Analytics account. Check your preferences' );
          }
          _gaq.push(['_setAccount',streema.config['analytics.account']]);
-         //_gaq.push(['_trackPageview']);
+         _gaq.push(['_trackPageview']);
 
          (function() {
             var ga = document.createElement('script'); 
