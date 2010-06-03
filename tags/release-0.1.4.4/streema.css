@@ -1,0 +1,128 @@
+* {
+    font-family: Arial, Tahoma, helvetica;
+}
+
+body.popup {
+    min-width: 200px;
+    max-height: 400px;
+    overflow: hidden;
+    font-size: 10px;
+}
+
+#radios {
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+ body.popup a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+li {
+    cursor: pointer;
+    list-style: none;
+}
+
+li:hover {
+    background-color: #EEF;
+}
+
+
+.band {
+    color: black;
+}
+
+.error {
+    color: darkred;
+}
+
+li.selected, li.selected:hover {
+    color: black;
+    background-color: #DDF;
+}
+
+
+#share {
+    text-align: center;
+}
+
+#foot {
+    text-align: center;
+}
+
+#foot * {
+    margin: 5px 7px 0px;
+}
+
+#foot img {
+    cursor: pointer;
+    vertical-align: -10%;
+}
+
+
+li.error, li.error * {
+    color: red;
+    text-decoration: line-through;
+}
+
+#status {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 11px;
+    font-family: Arial, Tahoma, helvetica;
+    vertical-align: middle;
+}
+
+#status a {
+    font-size: 13px;
+}
+
+#head {
+    position: relative;
+    height: 15px;
+    margin-bottom: 10px;
+}
+
+#favorites{
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    font-size: 13px; 
+    font-family: Arial, Tahoma, helvetica;
+    font-weight: bolder;
+    color: black;
+}
+
+#logo {
+    position: absolute;
+    right: 0px;
+
+}
+
+body.notification {
+    height: 55px;
+}
+
+body.notification img {
+    width: 48px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+body.notification div#body {
+    font-size: 15px;
+}
+
+body.notification div#title {
+    font-size: 18px;
+}
