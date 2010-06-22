@@ -43,7 +43,7 @@
     }
 
     if ( !localStorage['config'] ) {
-        streema.config['analytics.enabled'] = false;
+        streema.config['analytics.enabled'] = true;
         streema.config['analytics.account'] = 'UA-16445553-1';
 
         streema.config['playback.timeout'] = 15000;

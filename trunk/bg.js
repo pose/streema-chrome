@@ -40,6 +40,7 @@ $ = function(s) { return document.getElementById(s); };
         if ( !$('handle') || (!$('handle').playState && 
                 navigator.appVersion.indexOf("Win")!=-1)) {
             console.log('Passed timeout check :)! with state: ' +  state);
+
             streema.eventBus.sendRequest({'method': 'playbackNoCheck'});
             return;
         }
@@ -88,7 +89,7 @@ streema.eventBus.addListener( function(data, sender, sendResponse) {
 
             if (selectedRadio.streams[0].type == 'html') {
                 popup = window.open( selectedRadio.streams[0].url,
-                selectedRadio.streams[0].name);
+                    selectedRadio.streams[0].name);
                 if (window.focus) {
                     newwindow.focus()
                 }
@@ -125,10 +126,8 @@ streema.eventBus.addListener( function(data, sender, sendResponse) {
         } else if ( data.method == 'refresh' ) {
             streema.loadConfig()
         } else if ( data.method == 'streemaIcon' ) {
-            if (selectedRadio) {
-                chrome.extension.sendRequest({'method': 'currentRadio',
-                                            'id': selectedRadio.id})
-            }
+            chrome.extension.sendRequest({'method': 'currentRadio',
+                                            'id': selectedRadio ? selectedRadio.id : undefined})
         }
     }
     sendResponse()

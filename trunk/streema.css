@@ -41,8 +41,12 @@ li:hover {
     color: black;
 }
 
-.error {
-    color: darkred;
+#status span.error a {
+    font-size: small;
+}
+
+span.error {
+    font-size: small;
 }
 
 li.selected, li.selected:hover {
