@@ -24,39 +24,25 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(function () {
-    if ( typeof streema == 'undefined') {
-        streema = {};
+(function() {
+
+    if ( typeof streema === 'undefined') {
+        streema = {}
     }
 
-    if ( !streema.config ) {
-        streema.config = {};
-    }
-    
-    streema.saveConfig = function () {
-        localStorage['config'] = JSON.stringify(streema.config);
-        chrome.extension.sendRequest({'method': 'refresh'});
-    }
+    streema.eventBus = {}
 
-    streema.loadConfig = function () {
-        streema.config = JSON.parse(localStorage['config']);
-    }
+    var listeners = [];
 
-    if ( !localStorage['config'] ) {
-        streema.config['analytics.enabled'] = false;
-        streema.config['analytics.account'] = 'UA-16445553-1';
+    streema.eventBus.addListener = function (f) {
+        listeners.push(f);
+    };
 
-        streema.config['playback.timeout'] = 15000;
+    streema.eventBus.sendRequest = function(d) {
+        listeners.forEach( function (listener) {
+            listener(d, null, function() {});
+        });
+    };
 
-        /* Notifications*/
-        streema.config['notifications.timeout'] = 10000;
-        streema.config['notifications.enabled'] = true;
-    
-        localStorage['config'] = JSON.stringify(streema.config);
-    } else {
-        streema.loadConfig()
-    }
-
-    console.log('config module loaded ok');
+    console.log('event module loaded ok');
 }());
-
