@@ -25,127 +25,116 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-$ = function(s) { return document.getElementById(s) }
-    
-var background = chrome.extension.getBackgroundPage();
+$ = function(s) { return document.getElementById(s); };
 
+(function () {
     if ( typeof streema == 'undefined' ) {
         throw new Error('config.js must be loaded first')
     }
     streema.player = streema.player || {};
-    streema.radios = false;
-    streema.player.selectedRadio = null;
-
-    streema.display = function (msg, badge) {
-        badge = badge || '';
-        chrome.browserAction.setBadgeText({text: badge});
-        streema.player.status = currentRadio(msg);
-        chrome.browserAction.setTitle({title: msg});
-        streema.player.updateStatus();
-
-        streema.display.status = {title: msg, 
-            body: currentRadio(msg) || badge };
-        
-        if ( !streema.config['notifications.enable'] ) {
-            return;
-        }
-
-        // create an HTML notification:
-        if (streema.display.notification) {
-            streema.display.notification.cancel();
-        }
-            
-
-        streema.display.notification = webkitNotifications.createHTMLNotification(
-          'notification.html'  // html url - can be relative
-        );
-
-        // Then show the notification.
-        streema.display.notification.show();
-
-    }
-
-    var currentRadio = function (prefix, text) {
-        if ( typeof streema.player.selectedRadio == 'undefined' || 
-            streema.player.selectedRadio === null ) {
-            return '';
-        }
-
-        if ( text )
-            return sprintf('%s %s', prefix, streema.radios[streema.player.selectedRadio].name)
-
-        return sprintf('%s <a href="%s" target="_blank">%s</a>',
-                    prefix,
-                    'http://streema.com' + 
-                    streema.radios[streema.player.selectedRadio].spotUrl,
-                    streema.radios[streema.player.selectedRadio].name);
-    }
-
-
-    streema.player.error = function () {
-        console.log('updating status')
-
-        //streema.player.selectedRadio = null;
-        streema.display('Currently not working ', '!');
-        
-        if (typeof popup != 'undefined') {
-            console.log('popup is present')
-            if (popup.document) {
-                console.log('popup.document is present')
-                var elem = popup.document.getElementsByClassName('selected')[0];
-                elem.setAttribute('class', 'error');
-            }
-        } else {
-            console.log('popup is not present')
-        }
-
-        chrome.extension.getBackgroundPage().document.body.innerHTML = ''; 
-        // Google Analytics
-        var radio = streema.radios[streema.player.selectedRadio];
-        _gaq.push(['_trackEvent', 'Radio ' + radio.name + ' [' + radio.id + ']', 'failed']);
-    }
+    var selectedRadio;
+    var popup;
 
     streema.player.playTimeout = function () {
         var state;
-        console.log('Entering playTimeout')
-        if ( !background.$('player') || (!background.$('player').playState && navigator.appVersion.indexOf("Win")!=-1)) {
+        if ( !$('handle') || (!$('handle').playState && 
+                navigator.appVersion.indexOf("Win")!=-1)) {
             console.log('Passed timeout check :)! with state: ' +  state);
-
-            streema.display('Playing')
-            // Google Analytics
-            var radio = streema.radios[streema.player.selectedRadio];
-            _gaq.push(['_trackEvent', 'Radio ' + radio.name + ' [' + radio.id + ']', 'playing (but can\'t check)']);
+            streema.eventBus.sendRequest({'method': 'playbackNoCheck'});
             return;
         }
 
-        state = background.$('player').playState
+        state = $('handle').playState
         if ( state  != 3 ) {
             console.log('Play timeout, state:' + state );
-            streema.player.error();
+        
+            $('player').innerHTML = ''; 
+            streema.eventBus.sendRequest({'method': 'playbackError'});
         } else {
             console.log('Passed timeout check :)! with state: ' +  state);
 
-            streema.display('Playing')
-            // Google Analytics
-            var radio = streema.radios[streema.player.selectedRadio];
-            _gaq.push(['_trackEvent', 'Radio ' + radio.name + ' [' + radio.id + ']', 'playing']);
+            streema.eventBus.sendRequest({'method': 'playbackChecked'});
         }
     }
 
 chrome.extension.onRequest.addListener( function (data,sender,sendResponse) {
+    streema.eventBus.sendRequest(data);
+    }
+);
+
+streema.eventBus.addListener( function(data, sender, sendResponse) {
     if (data) {
         if ( data.method == 'play' ) {
-            console.log('Setting timeout')
-            streema.player.timeout = setTimeout ( 'streema.player.playTimeout()', data.when )
-
-            streema.display('Buffering')
-        } else if ( data.method == 'clearTimer') {
             clearTimeout(streema.player.timeout)
+
+            var radio = data.what
+            selectedRadio = JSON.parse(radio)
+            var types = {'ram': 'audio/x-pn-realaudio'}
+            var defaultType = 'application/x-mplayer2';
+            var type = defaultType;
+            console.log(radio)
+           /* <embed type="application/x-vlc-plugin" 
+                        pluginspage="http://www.videolan.org" 
+                        version="VideoLAN.VLCPlugin.2" id="player" 
+                        hidden="true" autoplay="off" 
+                        src="' + radio.streams[0].url +'" />
+            */
+
+            if ( popup ) {
+                popup.close()
+            }
+
+            $('player').innerHTML = ''
+
+            if (selectedRadio.streams[0].type == 'html') {
+                popup = window.open( selectedRadio.streams[0].url,
+                selectedRadio.streams[0].name);
+                if (window.focus) {
+                    newwindow.focus()
+                }
+            } else {
+                if (navigator.appVersion.indexOf("Win")!=-1) {
+                    type = selectedRadio.streams[0].type in types ? 
+                        types[selectedRadio.streams[0].type] : defaultType;
+                }
+
+            // text="audio/mpeg" is a hack for google chrome to play 
+            // the file right
+            $('player').innerHTML = sprintf(
+                '<embed type="%s" id="handle" src="%s" text="audio/mpeg" />', 
+                type, selectedRadio.streams[0].url);
+
+            if ( $('handle').controls )
+                $('handle').controls.play();
+
+            }
+
+            console.log('Setting timeout')
+            streema.player.timeout = setTimeout ( 
+                'streema.player.playTimeout()', data.timeout )
+            console.log('setting buffering')
         } else if ( data.method == 'stop') {
-           document.body.innerHTML = '' ;
+            
+            clearTimeout(streema.player.timeout)
+
+             if ( popup ) {
+                popup.close()
+            }
+
+           $('player').innerHTML = '' ;
         } else if ( data.method == 'refresh' ) {
             streema.loadConfig()
+        } else if ( data.method == 'streemaIcon' ) {
+            if (selectedRadio) {
+                chrome.extension.sendRequest({'method': 'currentRadio',
+                                            'id': selectedRadio.id})
+            }
         }
     }
     sendResponse()
-} )
+} );
+
+
+    console.log('background module loaded ok')
+
+}());

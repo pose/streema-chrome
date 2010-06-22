@@ -24,39 +24,39 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
 (function () {
-    if ( typeof streema == 'undefined') {
-        streema = {};
-    }
 
-    if ( !streema.config ) {
-        streema.config = {};
-    }
-    
-    streema.saveConfig = function () {
-        localStorage['config'] = JSON.stringify(streema.config);
-        chrome.extension.sendRequest({'method': 'refresh'});
-    }
+    var radiolist;
 
-    streema.loadConfig = function () {
-        streema.config = JSON.parse(localStorage['config']);
-    }
+    var updateRadioList = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange =  function() {
+            if ( xhr.readyState == 4 ) {
+                radiolist = JSON.parse(xhr.responseText);
+            }
+        };
 
-    if ( !localStorage['config'] ) {
-        streema.config['analytics.enabled'] = false;
-        streema.config['analytics.account'] = 'UA-16445553-1';
+        xhr.open('GET','http://streema.com/playlists?noCache=1272826630207', 
+            true);
+        xhr.send();
+    };
 
-        streema.config['playback.timeout'] = 15000;
 
-        /* Notifications*/
-        streema.config['notifications.timeout'] = 10000;
-        streema.config['notifications.enabled'] = true;
-    
-        localStorage['config'] = JSON.stringify(streema.config);
-    } else {
-        streema.loadConfig()
-    }
+    streema.eventBus.addListener( function (data,sender,sendResponse) {    
+        if ( data ) {
+            if ( data.method == 'streemaIcon' ) {
+                updateRadioList();
+                sendResponse();
+                chrome.extension.sendRequest(
+                    {'method': 'radiolist', 
+                    'radios':JSON.stringify(radiolist)}
+                );
+            }
+        }
+    });
 
-    console.log('config module loaded ok');
-}());
+    updateRadioList();
+    console.log('radiolist module loaded ok');
 
+}())
