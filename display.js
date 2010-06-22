@@ -49,6 +49,37 @@
 
     var stat = 'Ready. Click on a radio station above to start listening'; 
 
+    var betterDisplay = function(d) {
+        if ( 'badge' in d ) {
+            chrome.browserAction.setBadgeText({text: d.badge});
+        }
+
+        if ( 'title' in d ) {
+            chrome.browserAction.setTitle({title: d.title});
+        }
+
+        if ('state' in d) {
+            chrome.extension.sendRequest({'method': 'status', 
+                                        'stat': d.state})
+        }
+
+        if ('notification' in d) {
+            if (notification) {
+                notification.cancel();
+            }
+
+            notification = webkitNotifications.createHTMLNotification(
+                'notification.html#title=' + escape(d.notification.title) + 
+                '&' + 'body=' + escape(d.notification.body)  
+            // html url - can be relative
+            );
+        
+            // Then show the notification.
+            notification.show();
+        
+        }
+    };
+
     var display = function (msg, badge, statP) {
         console.log('Displaying: ' + msg + ' ' + badge)
         badge = badge || '';
@@ -71,14 +102,10 @@
             
 
         notification = webkitNotifications.createHTMLNotification(
-          'notification.html'  // html url - can be relative
+            'notification.html#title=' + escape(msg) + '&' + 
+            'body=' + escape(body)  
+          // html url - can be relative
         );
-
-        notification.ondisplay = function () {
-            chrome.extension.sendRequest({'method': 'notification', 
-                                        'title': msg,
-                                        'body': body});
-        }
         
         // Then show the notification.
         notification.show();
@@ -103,15 +130,22 @@
             } else if ( data.method == 'streemaIcon' ) {
                 chrome.extension.sendRequest({'method': 'status', 
                 'stat': stat});
+                betterDisplay({'badge': ''});
             } else if ( data.method == 'emptyRadioList' ) {
-                display('No radios found, are you logged in?', '?',
-                    sprintf(
-                    '<span class="error">%s \
-        <a href="http://streema.com/account/login" target="_blank">%s</a>%s\
+                var loggedIn = sprintf('<span class="error">%s \
+            <a href="http://streema.com/account/login" target="_blank">%s</a> \
+                    %s<a href="http://streema.com/account/register" target="_blank">%s</a>%s\
                         </span>',
-                    'No radios found, are you',
-                    'logged in',
-                    '?'));
+                    'Please  ',
+                    'log in',
+                    ' or ',
+                    'register',
+                    ', it is fast and free!');
+                betterDisplay({'badge': '?',
+                        'title': 'Are you logged in?',
+                        'state': loggedIn,
+                        'notification': {'title': 'No radios found',
+                        'body': loggedIn}});
             }
         }
     

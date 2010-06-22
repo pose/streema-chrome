@@ -24,7 +24,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-(function() {
+window.addEventListener('load',function() {
         
     var $ = function (id) { return document.getElementById(id); };
     var radios = [];
@@ -114,18 +114,33 @@
         }
     }
 
+    var gotRadios = false, gotCurrentRadio = false, drawn = false;
+    var stat;
+
+    $('status').innerHTML = 'Loading...';
+
+
     chrome.extension.onRequest.addListener( 
         function (data,sender,sendResponse) {
         if ( data ) {
             if (data.method == 'status') {
-                var stat = data.stat;
+                stat = data.stat;
                 console.log('updating status to ' + stat)
-                $('status').innerHTML = stat;
+                if (drawn) {
+                    $('status').innerHTML = stat;
+                }
             } else if ( data.method == 'radiolist' ) {
                 radios = JSON.parse(data.radios);
-                drawRadios();
+                gotRadios = true;
             } else if (data.method == 'currentRadio') {
                selectedRadioId = data.id;
+               gotCurrentRadio = true;
+            }
+            
+            if ( gotCurrentRadio && gotRadios && !drawn) {
+                drawRadios();
+                $('status').innerHTML = stat;
+                drawn = true;
             }
         }
     })
@@ -133,4 +148,4 @@
     chrome.extension.sendRequest({'method': 'streemaIcon'});
     console.log('ui module loaded ok');
 
- }());
+ }, true);
