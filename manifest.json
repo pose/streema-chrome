@@ -1,6 +1,6 @@
 {
   "name": "Radio Player for Streema",
-  "version": "0.2",
+  "version": "0.2.1",
   "background_page": "background.html",
   "description": "Welcome to the best way to experience Streema in Chrome. Install this radio tuner and bring radio back into your life!",
   "icons": {
