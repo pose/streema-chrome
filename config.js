@@ -24,6 +24,8 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+STREEMA_VERSION = '0.2.3';
+
 (function () {
     if ( typeof streema == 'undefined') {
         streema = {};
@@ -52,9 +54,23 @@
         streema.config['notifications.timeout'] = 10000;
         streema.config['notifications.enabled'] = true;
     
+        streema.config['version'] = STREEMA_VERSION;
+
         localStorage['config'] = JSON.stringify(streema.config);
     } else {
         streema.loadConfig()
+        if ( STREEMA_VERSION != streema.config['version'] ) {
+            streema.config['analytics.enabled'] = streema.config['analytics.enable'] === undefined ? true : streema.config['analytics.enable'];
+            streema.config['notifications.enabled'] = streema.config['notifications.enable'] === undefined ? true : streema.config['notifications.enable'];
+            streema.config['version'] = STREEMA_VERSION;
+            if ( 'analytics.enable' in streema.config ) {
+                delete streema.config['analytics.enable'];
+            }
+            if ( 'notifications.enable'  in streema.config ) {
+                delete streema.config['notifications.enable'];
+            }
+            streema.saveConfig();
+        }
     }
 
     console.log('config module loaded ok');
