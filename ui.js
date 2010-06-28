@@ -33,6 +33,10 @@ window.addEventListener('load',function() {
     var config = streema.config;
     var RADIO_TIMEOUT = config['playback.timeout'];
 
+    var gotRadios = false, gotCurrentRadio = false, drawn = false;
+    var stat;
+    var eNamed = streema.eventBus.addChromeNamedListener;
+
     var removeSelected = function () {
         var old = document.getElementsByClassName('selected')[0];
         if (typeof old != 'undefined' && old.removeAttribute)
@@ -44,7 +48,7 @@ window.addEventListener('load',function() {
             window.event.preventDefault();
         }
 
-        chrome.extension.sendRequest({'method': 'stop'});
+        chrome.extension.sendRequest({'method': 'ui.stop'});
         removeSelected()
     }
 
@@ -74,7 +78,7 @@ window.addEventListener('load',function() {
         
         selectedRadioId = radio.id;
         console.log(JSON.stringify(radio))
-        chrome.extension.sendRequest({'method': 'play', 
+        chrome.extension.sendRequest({'method': 'ui.play', 
                                         'what': JSON.stringify(radio), 
                                         'timeout':RADIO_TIMEOUT});
     };   
@@ -110,42 +114,41 @@ window.addEventListener('load',function() {
         }
             
         if (radios.length == 0) {
-            chrome.extension.sendRequest({'method': 'emptyRadioList'}); 
+            chrome.extension.sendRequest({'method': 'ui.emptyRadioList'}); 
         }
     }
-
-    var gotRadios = false, gotCurrentRadio = false, drawn = false;
-    var stat;
-
+    
     $('status').innerHTML = 'Loading...';
 
-
-    chrome.extension.onRequest.addListener( 
-        function (data,sender,sendResponse) {
-        if ( data ) {
-            if (data.method == 'status') {
-                stat = data.stat;
-                console.log('updating status to ' + stat)
-                if (drawn) {
-                    $('status').innerHTML = stat;
-                }
-            } else if ( data.method == 'radiolist' ) {
-                radios = JSON.parse(data.radios);
-                gotRadios = true;
-            } else if (data.method == 'currentRadio') {
-               selectedRadioId = data.id;
-               gotCurrentRadio = true;
-            }
-            
-            if ( gotCurrentRadio && gotRadios && !drawn) {
-                drawRadios();
-                $('status').innerHTML = stat;
-                drawn = true;
-            }
+    eNamed('display.status', function (data) {
+        stat = data.stat;
+        console.log('updating status to ' + stat)
+        if (drawn) {
+            $('status').innerHTML = stat;
         }
-    })
+    });
+
+    eNamed('radiolist.update', function (data) {
+        radios = JSON.parse(data.radios);
+        gotRadios = true;
+        drawIfReady();
+    });
+
+    eNamed('player.currentRadio', function (data) {
+        selectedRadioId = data.id;
+        gotCurrentRadio = true;
+        drawIfReady();
+    });
+
+    var drawIfReady = function () {
+        if ( gotCurrentRadio && gotRadios && !drawn) {
+            drawRadios();
+            $('status').innerHTML = stat;
+            drawn = true;
+        }
+    };
     
-    chrome.extension.sendRequest({'method': 'streemaIcon'});
+    chrome.extension.sendRequest({'method': 'ui.streemaIcon'});
     console.log('ui module loaded ok');
 
  }, true);

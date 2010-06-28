@@ -38,11 +38,33 @@
         listeners.push(f);
     };
 
+    streema.eventBus.addChromeNamedListener = function (name,f) {
+        chrome.extension.onRequest.addListener(
+            function (data,sender,sendResponse) {
+            if ( data && data.method == name  ) {
+                f(data,sender,sendResponse);
+            }
+        });
+    };
+
+    streema.eventBus.addNamedListener = function (name, f) {
+        listeners.push(function (data,sender,sendResponse) {
+            if ( data && data.method === name ) {
+                    f(data,sender,sendResponse);
+                }
+        });
+    };
+
     streema.eventBus.sendRequest = function(d) {
         listeners.forEach( function (listener) {
+            console.log(d);
             listener(d, null, function() {});
         });
     };
+
+    // Add config refresh event to all listeners
+    streema.eventBus.addNamedListener('config.refresh', streema.loadConfig);
+
 
     console.log('event module loaded ok');
 }());

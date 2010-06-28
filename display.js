@@ -27,6 +27,7 @@
 (function () {
 
     var selectedRadio;
+    var eNamed = streema.eventBus.addNamedListener; 
     
     var currentRadio = function (prefix, text) {
         if ( typeof selectedRadio == 'undefined' || 
@@ -59,7 +60,7 @@
         }
 
         if ('state' in d) {
-            chrome.extension.sendRequest({'method': 'status', 
+            chrome.extension.sendRequest({'method': 'display.status', 
                                         'stat': d.state})
         }
 
@@ -85,7 +86,7 @@
         badge = badge || '';
         stat = statP || currentRadio(msg) || stat;
         chrome.browserAction.setBadgeText({text: badge});
-        chrome.extension.sendRequest({'method': 'status', 
+        chrome.extension.sendRequest({'method': 'display.status', 
                                         'stat': stat})
         chrome.browserAction.setTitle({title: msg});
 
@@ -111,47 +112,50 @@
         notification.show();
     }
 
-    streema.eventBus.addListener( function (data,sender,sendResponse) {
-        if (data) {
-
-            if ( data.method == 'playbackNoCheck' ) {
-                display('Playing');
-            } else if ( data.method == 'playbackError' ) {
-                display('Currently not working ', '!'); 
-            } else if ( data.method == 'playbackChecked' ) {
-                display('Playing');
-            } else if ( data.method == 'play' ) {
-                selectedRadio = JSON.parse(data.what)
-                display('Buffering');
-            } else if ( data.method == 'stop' ) {
-                display('Stopped');
-            } else if ( data.method == 'refresh' ) {
-                streema.loadConfig()
-            } else if ( data.method == 'streemaIcon' ) {
-                chrome.extension.sendRequest({'method': 'status', 
-                'stat': stat});
-                betterDisplay({'badge': ''});
-            } else if ( data.method == 'emptyRadioList' ) {
-                var loggedIn = sprintf('<span class="error">%s \
-            <a href="http://streema.com/account/login" target="_blank">%s</a> \
-                    %s<a href="http://streema.com/account/register" target="_blank">%s</a>%s\
-                        </span>',
-                    'Please  ',
-                    'log in',
-                    ' or ',
-                    'register',
-                    ', it is fast and free!');
-                betterDisplay({'badge': '?',
-                        'title': 'Are you logged in?',
-                        'state': loggedIn,
-                        'notification': {'title': 'No radios found',
-                        'body': loggedIn}});
-            }
-        }
+    eNamed('player.error', function() {
+        display('Currently not working ', '!'); 
+    });
     
-        sendResponse()
+    eNamed('ui.play', function(data) {
+        selectedRadio = JSON.parse(data.what)
+        display('Playing');
+    });
+    
+    eNamed('ui.stop', function() {
+        display('Stopped');
+    });
+    
+    eNamed('ui.streemaIcon', function() {
+        chrome.extension.sendRequest({'method': 'display.status', 
+            'stat': stat});
+        betterDisplay({'badge': ''});
+    });
+    
+    eNamed('song.update', function(data) {
+        var songInfo = JSON.parse(data.info);
+        betterDisplay({'notification': { 
+            'title':  songInfo.song,
+            'body': 'by ' + songInfo.artist}});
     });
 
+    eNamed('ui.emptyRadioList', function() {
+        var loggedIn = sprintf('<span class="error">%s \
+        <a href="http://streema.com/account/login" target="_blank">%s</a> \
+    %s<a href="http://streema.com/account/register" target="_blank">%s</a>%s\
+        </span>',
+            'Please  ',
+            'log in',
+            ' or ',
+            'register',
+            ', it is fast and free!');
+        betterDisplay({'badge': '?',
+            'title': 'Are you logged in?',
+            'state': loggedIn,
+            'notification': {'title': 'No radios found',
+            'body': loggedIn}});
+
+    });
+    
     console.log('display module loaded ok')
 
 }());

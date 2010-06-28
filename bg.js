@@ -33,7 +33,9 @@ $ = function(s) { return document.getElementById(s); };
     }
     streema.player = streema.player || {};
     var selectedRadio;
+    var timeout;
     var popup;
+    var eNamed = streema.eventBus.addNamedListener;
 
     streema.player.playTimeout = function () {
         var state;
@@ -41,7 +43,8 @@ $ = function(s) { return document.getElementById(s); };
                 navigator.appVersion.indexOf("Win")!=-1)) {
             console.log('Passed timeout check :)! with state: ' +  state);
 
-            streema.eventBus.sendRequest({'method': 'playbackNoCheck'});
+            streema.eventBus.sendRequest({'method': 'player.playing', 
+                                        'status': 'noCheck'});
             return;
         }
 
@@ -50,90 +53,89 @@ $ = function(s) { return document.getElementById(s); };
             console.log('Play timeout, state:' + state );
         
             $('player').innerHTML = ''; 
-            streema.eventBus.sendRequest({'method': 'playbackError'});
+            streema.eventBus.sendRequest({'method': 'player.error'});
         } else {
             console.log('Passed timeout check :)! with state: ' +  state);
 
-            streema.eventBus.sendRequest({'method': 'playbackChecked'});
+            streema.eventBus.sendRequest({'method': 'player.playing', 
+                                        'status': 'ok'});
         }
     }
 
-chrome.extension.onRequest.addListener( function (data,sender,sendResponse) {
-    streema.eventBus.sendRequest(data);
-    }
-);
-
-streema.eventBus.addListener( function(data, sender, sendResponse) {
-    if (data) {
-        if ( data.method == 'play' ) {
-            clearTimeout(streema.player.timeout)
-
-            var radio = data.what
-            selectedRadio = JSON.parse(radio)
-            var types = {'ram': 'audio/x-pn-realaudio'}
-            var defaultType = 'application/x-mplayer2';
-            var type = defaultType;
-            console.log(radio)
-           /* <embed type="application/x-vlc-plugin" 
-                        pluginspage="http://www.videolan.org" 
-                        version="VideoLAN.VLCPlugin.2" id="player" 
-                        hidden="true" autoplay="off" 
-                        src="' + radio.streams[0].url +'" />
-            */
-
-            if ( popup ) {
-                popup.close()
-            }
-
-            $('player').innerHTML = ''
-
-            if (selectedRadio.streams[0].type == 'html') {
-                popup = window.open( selectedRadio.streams[0].url,
-                    selectedRadio.streams[0].name);
-                if (window.focus) {
-                    newwindow.focus()
-                }
-            } else {
-                if (navigator.appVersion.indexOf("Win")!=-1) {
-                    type = selectedRadio.streams[0].type in types ? 
-                        types[selectedRadio.streams[0].type] : defaultType;
-                }
-
-            // text="audio/mpeg" is a hack for google chrome to play 
-            // the file right
-            $('player').innerHTML = sprintf(
-                '<embed type="%s" id="handle" src="%s" text="audio/mpeg" />', 
-                type, selectedRadio.streams[0].url);
-
-            if ( $('handle').controls )
-                $('handle').controls.play();
-
-            }
-
-            console.log('Setting timeout')
-            streema.player.timeout = setTimeout ( 
-                'streema.player.playTimeout()', data.timeout )
-            console.log('setting buffering')
-        } else if ( data.method == 'stop') {
-            
-            clearTimeout(streema.player.timeout)
-
-             if ( popup ) {
-                popup.close()
-            }
-
-           $('player').innerHTML = '' ;
-        } else if ( data.method == 'refresh' ) {
-            streema.loadConfig()
-        } else if ( data.method == 'streemaIcon' ) {
-            chrome.extension.sendRequest({'method': 'currentRadio',
-                                            'id': selectedRadio ? selectedRadio.id : undefined})
+    chrome.extension.onRequest.addListener( 
+        function (data,sender,sendResponse) {
+            streema.eventBus.sendRequest(data);
         }
-    }
-    sendResponse()
-} );
+    );
 
 
-    console.log('background module loaded ok')
+    eNamed( 'ui.play', function (data) {
+        clearTimeout(streema.player.timeout)
+
+        var radio = data.what
+        selectedRadio = JSON.parse(radio)
+        var types = {'ram': 'audio/x-pn-realaudio'}
+        var defaultType = 'application/x-mplayer2';
+        var type = defaultType;
+        console.log(radio)
+       /* <embed type="application/x-vlc-plugin" 
+                    pluginspage="http://www.videolan.org" 
+                    version="VideoLAN.VLCPlugin.2" id="player" 
+                    hidden="true" autoplay="off" 
+                    src="' + radio.streams[0].url +'" />
+        */
+
+        if ( popup ) {
+            popup.close()
+        }
+
+        $('player').innerHTML = ''
+
+        if (selectedRadio.streams[0].type == 'html') {
+            popup = window.open( selectedRadio.streams[0].url,
+                selectedRadio.streams[0].name);
+            if (window.focus) {
+                newwindow.focus()
+            }
+        } else {
+            if (navigator.appVersion.indexOf("Win")!=-1) {
+                type = selectedRadio.streams[0].type in types ? 
+                    types[selectedRadio.streams[0].type] : defaultType;
+            }
+
+        // text="audio/mpeg" is a hack for google chrome to play 
+        // the file right
+        $('player').innerHTML = sprintf(
+            '<embed type="%s" id="handle" src="%s" text="audio/mpeg" />', 
+            type, selectedRadio.streams[0].url);
+
+        if ( $('handle').controls )
+            $('handle').controls.play();
+
+        }
+
+        console.log('Setting timeout')
+        timeout = setTimeout ( 
+            'streema.player.playTimeout()', data.timeout )
+        console.log('setting buffering')
+
+    });
+
+    eNamed('ui.stop', function () {
+        clearTimeout(timeout)
+
+         if ( popup ) {
+            popup.close()
+        }
+
+       $('player').innerHTML = '' ;
+    });
+
+    eNamed('ui.streemaIcon', function () {
+        chrome.extension.sendRequest({'method': 'player.currentRadio',
+                'id': selectedRadio ? selectedRadio.id : undefined});
+    });
+
+    console.log('background module loaded ok');
 
 }());
