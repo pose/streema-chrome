@@ -31,32 +31,38 @@
 
     var updateRadioList = function () {
         var xhr = new XMLHttpRequest();
+
+        /* When we have loaded a previous radiolist we show it to the user 
+        but we update on background */
+        if ( radiolist !== undefined && (radiolist instanceof Array &&
+            radiolist.length !== 0 )) {
+            chrome.extension.sendRequest(
+                {'method': 'radiolist.update', 
+                'radios':JSON.stringify(radiolist)}
+            );
+        }
+
         xhr.onreadystatechange =  function() {
             if ( xhr.readyState == 4 ) {
                 radiolist = JSON.parse(xhr.responseText);
+                chrome.extension.sendRequest(
+                    {'method': 'radiolist.update', 
+                    'radios':JSON.stringify(radiolist)}
+                );
             }
         };
 
-        xhr.open('GET','http://streema.com/playlists?noCache=1272826630207', 
+        xhr.open('GET',
+            'http://streema.com/playlists?noCache=1272826630207', 
             true);
         xhr.send();
     };
 
+    var eNamed = streema.eventBus.addNamedListener;
 
-    streema.eventBus.addListener( function (data,sender,sendResponse) {    
-        if ( data ) {
-            if ( data.method == 'streemaIcon' ) {
-                updateRadioList();
-                sendResponse();
-                chrome.extension.sendRequest(
-                    {'method': 'radiolist', 
-                    'radios':JSON.stringify(radiolist)}
-                );
-            }
-        }
-    });
+    eNamed( 'ui.streemaIcon', updateRadioList);
 
     updateRadioList();
     console.log('radiolist module loaded ok');
 
-}())
+}());

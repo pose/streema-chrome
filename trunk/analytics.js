@@ -24,16 +24,17 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+var _gaq = _gaq || [];
+
 (function() {   
     var radio;
-  
+    var eNamed = streema.eventBus.addNamedListener; 
+
     if ( !streema.config['analytics.enabled'] ) {
         console.log('Analytics disabled');
         return;
      }
-
-    var _gaq = _gaq || [];
-
+     
      if ( !streema.config['analytics.account'] ) {
         throw new Error('Invalid Google Analytics account. \
                             Check your preferences' );
@@ -63,28 +64,30 @@
         return 'Radio ' + radio.name + ' [' + radio.id +']';
     };
 
-   streema.eventBus.addListener( function (data,sender,sendResponse) {
-        if (data) {
-            if ( data.method == 'play' ) {
-                radio = JSON.parse(data.what)
-                log(radioSerialize(), 'selected');
-            } else if (data.method == 'stop' ) {
-                log(radioSerialize(), 'stopped');
-            } else if ( data.method == 'refresh' ) {
-                streema.loadConfig()
-            } else if ( data.method == 'streemaIcon' ) {
-                log('Streema icon', 'clicked');
-            } else if ( data.method == 'playbackError' ) {
-                log(radioSerialize(), 'failed'); 
-            } else if ( data.method == 'playbackNoCheck' ) {
-                log(radioSerialize(), 'playing (but can\'t check)');
-            } else if ( data.method == 'playbackChecked' ) {
-                log(radioSerialize(), 'playing');
-            }
+    eNamed('ui.play', function (data){ 
+        radio = JSON.parse(data.what)
+        log(radioSerialize(), 'selected');
+    });
 
-        }
+    eNamed('ui.stop', function (){
+        log(radioSerialize(), 'stopped');
+    });
     
-        sendResponse()
+    eNamed('ui.streemaIcon', function (){
+        log('Streema icon', 'clicked');
+    });
+    
+    eNamed('player.error', function (){
+        log(radioSerialize(), 'failed'); 
+    });
+    
+    eNamed('player.playing', function (data) {
+        if ( data['status'] !== 'ok' ) {
+            log(radioSerialize(), 'playing (but can\'t check)');
+            return; 
+        }
+        
+        log(radioSerialize(), 'playing');
     });
 
     console.log('analytics module loaded ok')

@@ -37,7 +37,7 @@ STREEMA_VERSION = '0.2.3';
     
     streema.saveConfig = function () {
         localStorage['config'] = JSON.stringify(streema.config);
-        chrome.extension.sendRequest({'method': 'refresh'});
+        chrome.extension.sendRequest({'method': 'config.refresh'});
     }
 
     streema.loadConfig = function () {
