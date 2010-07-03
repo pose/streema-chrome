@@ -50,7 +50,8 @@
 
                 /* Also, as this radio does not support song info suspend
                 the song name polling */
-                if ( newSongInfo.data === undefined ) {
+                if ( newSongInfo.data === undefined  ||
+                    newSongInfo.data.song === undefined) {
                     clearInterval(timer);
                     return;
                 }
@@ -97,6 +98,10 @@
     });
 
     eNamed('ui.stop', function() {
+        clearInterval(timer);
+    });
+    
+    eNamed('player.error', function() {
         clearInterval(timer);
     });
 

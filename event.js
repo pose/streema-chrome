@@ -57,7 +57,6 @@
 
     streema.eventBus.sendRequest = function(d) {
         listeners.forEach( function (listener) {
-            console.log(d);
             listener(d, null, function() {});
         });
     };

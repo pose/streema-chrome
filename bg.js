@@ -61,13 +61,14 @@ $ = function(s) { return document.getElementById(s); };
                                         'status': 'ok'});
         }
     }
-
+/*
     chrome.extension.onRequest.addListener( 
         function (data,sender,sendResponse) {
             streema.eventBus.sendRequest(data);
         }
-    );
+    );*/
 
+    var type;
 
     eNamed( 'ui.play', function (data) {
         clearTimeout(streema.player.timeout)
@@ -76,8 +77,8 @@ $ = function(s) { return document.getElementById(s); };
         selectedRadio = JSON.parse(radio)
         var types = {'ram': 'audio/x-pn-realaudio'}
         var defaultType = 'application/x-mplayer2';
-        var type = defaultType;
-        console.log(radio)
+        type = defaultType;
+        //console.log(radio)
        /* <embed type="application/x-vlc-plugin" 
                     pluginspage="http://www.videolan.org" 
                     version="VideoLAN.VLCPlugin.2" id="player" 
@@ -91,18 +92,13 @@ $ = function(s) { return document.getElementById(s); };
 
         $('player').innerHTML = ''
 
-        if (selectedRadio.streams[0].type == 'html') {
-            popup = window.open( selectedRadio.streams[0].url,
-                selectedRadio.streams[0].name);
-            if (window.focus) {
-                newwindow.focus()
-            }
-        } else {
-            if (navigator.appVersion.indexOf("Win")!=-1) {
-                type = selectedRadio.streams[0].type in types ? 
-                    types[selectedRadio.streams[0].type] : defaultType;
-            }
+        if (navigator.appVersion.indexOf("Win")!=-1) {
+            type = selectedRadio.streams[0].type in types ? 
+                types[selectedRadio.streams[0].type] : defaultType;
+        }
+    });
 
+    eNamed( 'player.streema.error', function (data) {
         // text="audio/mpeg" is a hack for google chrome to play 
         // the file right
         $('player').innerHTML = sprintf(
@@ -112,8 +108,6 @@ $ = function(s) { return document.getElementById(s); };
         if ( $('handle').controls )
             $('handle').controls.play();
 
-        }
-
         console.log('Setting timeout')
         timeout = setTimeout ( 
             'streema.player.playTimeout()', data.timeout )
@@ -121,7 +115,7 @@ $ = function(s) { return document.getElementById(s); };
 
     });
 
-    eNamed('ui.stop', function () {
+    eNamed('player.streema.stop', function () {
         clearTimeout(timeout)
 
          if ( popup ) {
@@ -131,10 +125,10 @@ $ = function(s) { return document.getElementById(s); };
        $('player').innerHTML = '' ;
     });
 
-    eNamed('ui.streemaIcon', function () {
+/*    eNamed('ui.streemaIcon', function () {
         chrome.extension.sendRequest({'method': 'player.currentRadio',
                 'id': selectedRadio ? selectedRadio.id : undefined});
-    });
+    });*/
 
     console.log('background module loaded ok');
 
