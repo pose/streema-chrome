@@ -24,11 +24,12 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global streema*/
+
 var _gaq = _gaq || [];
 
 (function() {   
-    var radio;
-    var eNamed = streema.eventBus.addNamedListener; 
+    var radio, eNamed = streema.eventBus.addNamedListener; 
 
     if ( !streema.config['analytics.enabled'] ) {
         console.log('Analytics disabled');
@@ -36,8 +37,7 @@ var _gaq = _gaq || [];
      }
      
      if ( !streema.config['analytics.account'] ) {
-        throw new Error('Invalid Google Analytics account. \
-                            Check your preferences' );
+        throw new Error('Invalid Google Analytics account. Check your preferences' );
      }
 
      _gaq.push(['_setAccount',streema.config['analytics.account']]);

@@ -24,13 +24,16 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global chrome*/
+var streema;
+
 (function() {
 
     if ( typeof streema === 'undefined') {
-        streema = {}
+        streema = {};
     }
 
-    streema.eventBus = {}
+    streema.eventBus = {};
 
     var listeners = [];
 
@@ -41,7 +44,7 @@
     streema.eventBus.addChromeNamedListener = function (name,f) {
         chrome.extension.onRequest.addListener(
             function (data,sender,sendResponse) {
-            if ( data && data.method == name  ) {
+            if ( data && data.method === name  ) {
                 f(data,sender,sendResponse);
             }
         });

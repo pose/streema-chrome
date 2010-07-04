@@ -24,10 +24,13 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-STREEMA_VERSION = '0.2.3';
+/*global localStorage chrome*/
+
+var streema;
+var STREEMA_VERSION = '0.2.3';
 
 (function () {
-    if ( typeof streema == 'undefined') {
+    if ( typeof streema === 'undefined') {
         streema = {};
     }
 
@@ -38,7 +41,7 @@ STREEMA_VERSION = '0.2.3';
     streema.saveConfig = function () {
         localStorage['config'] = JSON.stringify(streema.config);
         chrome.extension.sendRequest({'method': 'config.refresh'});
-    }
+    };
 
     streema.loadConfig = function () {
         streema.config = JSON.parse(localStorage['config']);
@@ -58,8 +61,8 @@ STREEMA_VERSION = '0.2.3';
 
         localStorage['config'] = JSON.stringify(streema.config);
     } else {
-        streema.loadConfig()
-        if ( STREEMA_VERSION != streema.config['version'] ) {
+        streema.loadConfig();
+        if ( STREEMA_VERSION !== streema.config['version'] ) {
             streema.config['analytics.enabled'] = streema.config['analytics.enable'] === undefined ? true : streema.config['analytics.enable'];
             streema.config['notifications.enabled'] = streema.config['notifications.enable'] === undefined ? true : streema.config['notifications.enable'];
             streema.config['version'] = STREEMA_VERSION;

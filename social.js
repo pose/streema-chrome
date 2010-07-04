@@ -24,9 +24,10 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global streema*/
+
 (function () {
-    var eNamed = streema.eventBus.addNamedListener;
-    var selectedRadio;
+    var eNamed = streema.eventBus.addNamedListener, selectedRadio;
 
     eNamed('ui.play', function (data) {
         selectedRadio = JSON.parse(data.what); 
@@ -37,7 +38,7 @@
         var xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange =  function() {
-            if ( xhr.readyState == 4 ) {
+            if ( xhr.readyState === 4 ) {
                 console.log(xhr.responseText);
             }
         };

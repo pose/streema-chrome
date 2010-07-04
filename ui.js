@@ -24,66 +24,23 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global window streema chrome sprintf*/
+
 window.addEventListener('load',function() {
         
-    var $ = function (id) { return document.getElementById(id); };
-    var radios = [];
-    var selectedRadioId;
-    ui = {};
-    var config = streema.config;
-    var RADIO_TIMEOUT = config['playback.timeout'];
-
-    var gotRadios = false, gotCurrentRadio = false, drawn = false;
-    var stat;
-    var eNamed = streema.eventBus.addChromeNamedListener;
-
-    var removeSelected = function () {
+    var $ = function (id) { 
+        return document.getElementById(id); 
+    },radios = [], selectedRadioId, ui = {}, config = streema.config, 
+    RADIO_TIMEOUT = config['playback.timeout'], gotRadios = false, 
+    gotCurrentRadio = false, drawn = false, stat, 
+    eNamed = streema.eventBus.addChromeNamedListener,
+    removeSelected = function () {
         var old = document.getElementsByClassName('selected')[0];
-        if (typeof old != 'undefined' && old.removeAttribute)
+        if (typeof old !== 'undefined' && old.removeAttribute) {
             old.removeAttribute('class');
-    }
-
-    ui.stop = function () {
-        if ( window.event && window.event.preventDefault) {
-            window.event.preventDefault();
         }
-
-        chrome.extension.sendRequest({'method': 'ui.stop'});
-        removeSelected()
-    }
-
-    ui.play = function(id) {
-        if ( window.event && window.event.preventDefault) {
-            window.event.preventDefault();
-        }
-        
-        if (arguments.length == 0) {
-            if ( !selectedRadioId)
-                return;
-
-            id = selectedRadioId;
-        }
-
-        removeSelected()
-        if ( this &&  this.setAttribute ) {
-            this.setAttribute('class','selected'); 
-        }
-
-        var radio = radios.filter( function (radio) { 
-            if ( radio.id == id ) {
-                return true;
-            }
-        })[0];
-
-        
-        selectedRadioId = radio.id;
-        console.log(JSON.stringify(radio))
-        chrome.extension.sendRequest({'method': 'ui.play', 
-                                        'what': JSON.stringify(radio), 
-                                        'timeout':RADIO_TIMEOUT});
-    };   
-
-    var drawRadios = function() {
+    }, 
+    drawRadios = function() {
         radios = radios.sort(function (a,b) {
             a = a.name.toLowerCase();
             b = b.name.toLowerCase();
@@ -99,7 +56,7 @@ window.addEventListener('load',function() {
 
         $('radios').innerHTML = '<ul>' + radios.map( function(radio, index){
             var klass = selectedRadioId !== undefined && 
-                selectedRadioId == radio.id ? 'selected' : '';
+                selectedRadioId === radio.id ? 'selected' : '';
                 
             return sprintf(
                 '<li class="%s" onclick="ui.play.call(this,%s); return false;">\
@@ -113,11 +70,61 @@ window.addEventListener('load',function() {
             selected[0].scrollIntoView(false);
         }
             
-        if (radios.length == 0) {
+        if (radios.length === 0) {
             chrome.extension.sendRequest({'method': 'ui.emptyRadioList'}); 
         }
-    }
+    }, 
+    drawIfReady = function () {
+        if ( gotCurrentRadio && gotRadios && !drawn) {
+            drawRadios();
+            $('status').innerHTML = stat;
+            drawn = true;
+        }
+    };
     
+    
+
+    ui.stop = function () {
+        if ( window.event && window.event.preventDefault) {
+            window.event.preventDefault();
+        }
+
+        chrome.extension.sendRequest({'method': 'ui.stop'});
+        removeSelected();
+    };
+
+    ui.play = function(id) {
+        if ( window.event && window.event.preventDefault) {
+            window.event.preventDefault();
+        }
+        
+        if (arguments.length === 0) {
+            if ( !selectedRadioId) {
+                return;
+            }
+
+            id = selectedRadioId;
+        }
+
+        removeSelected();
+        if ( this &&  this.setAttribute ) {
+            this.setAttribute('class','selected'); 
+        }
+
+        var radio = radios.filter( function (radio) { 
+            if ( radio.id === id ) {
+                return true;
+            }
+        })[0];
+
+        
+        selectedRadioId = radio.id;
+        console.log(JSON.stringify(radio));
+        chrome.extension.sendRequest({'method': 'ui.play', 
+                                        'what': JSON.stringify(radio), 
+                                        'timeout':RADIO_TIMEOUT});
+    };   
+
     $('status').innerHTML = 'Loading...';
 
     eNamed('display.status', function (data) {
@@ -140,14 +147,6 @@ window.addEventListener('load',function() {
         drawIfReady();
     });
 
-    var drawIfReady = function () {
-        if ( gotCurrentRadio && gotRadios && !drawn) {
-            drawRadios();
-            $('status').innerHTML = stat;
-            drawn = true;
-        }
-    };
-    
     chrome.extension.sendRequest({'method': 'ui.streemaIcon'});
     console.log('ui module loaded ok');
 
