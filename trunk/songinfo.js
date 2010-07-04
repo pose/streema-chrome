@@ -24,21 +24,20 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global streema sprintf*/
+
 (function () {
 
-    var MINUTES_BETWEEN_SONG_INFO = 0.75;
-    var eNamed = streema.eventBus.addNamedListener; 
-    var songInfo, radio, timer;
-
-    var updateSongInfo = function () {
+    var MINUTES_BETWEEN_SONG_INFO = 0.75,
+    eNamed = streema.eventBus.addNamedListener, songInfo, radio, timer,
+    updateSongInfo = function () {
         if ( !radio ) {
             return;
         }
-        var newSongInfo;
-        var xhr = new XMLHttpRequest();
+        var newSongInfo, xhr = new XMLHttpRequest();
         xhr.onreadystatechange =  function() {
-            if ( xhr.readyState == 4 ) {
-                console.log(xhr.responseText)
+            if ( xhr.readyState === 4 ) {
+                console.log(xhr.responseText);
                 newSongInfo = JSON.parse(xhr.responseText);
 
                 /* New radio does not provide song info, so we need to
@@ -93,7 +92,7 @@
         radio = JSON.parse(data.what);
         songInfo = undefined;
         timer = setInterval(function () { 
-            streema.eventBus.sendRequest({'method': 'song.checkSong'}) 
+            streema.eventBus.sendRequest({'method': 'song.checkSong'});
         } , 1000 * 60 * MINUTES_BETWEEN_SONG_INFO);
     });
 

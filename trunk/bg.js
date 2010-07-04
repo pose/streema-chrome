@@ -24,23 +24,24 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global streema sprintf*/
 
-$ = function(s) { return document.getElementById(s); };
+var $ = function (s) {
+    return document.getElementById(s); 
+};
 
 (function () {
-    if ( typeof streema == 'undefined' ) {
-        throw new Error('config.js must be loaded first')
+    if ( typeof streema === 'undefined' ) {
+        throw new Error('config.js must be loaded first');
     }
     streema.player = streema.player || {};
-    var selectedRadio;
-    var timeout;
-    var popup;
-    var eNamed = streema.eventBus.addNamedListener;
+    var selectedRadio, timeout, popup,
+        eNamed = streema.eventBus.addNamedListener, type;
 
     streema.player.playTimeout = function () {
         var state;
         if ( !$('handle') || (!$('handle').playState && 
-                navigator.appVersion.indexOf("Win")!=-1)) {
+                navigator.appVersion.indexOf("Win") !== -1)) {
             console.log('Passed timeout check :)! with state: ' +  state);
 
             streema.eventBus.sendRequest({'method': 'player.playing', 
@@ -48,8 +49,8 @@ $ = function(s) { return document.getElementById(s); };
             return;
         }
 
-        state = $('handle').playState
-        if ( state  != 3 ) {
+        state = $('handle').playState;
+        if ( state  !== 3 ) {
             console.log('Play timeout, state:' + state );
         
             $('player').innerHTML = ''; 
@@ -60,7 +61,7 @@ $ = function(s) { return document.getElementById(s); };
             streema.eventBus.sendRequest({'method': 'player.playing', 
                                         'status': 'ok'});
         }
-    }
+    };
 /*
     chrome.extension.onRequest.addListener( 
         function (data,sender,sendResponse) {
@@ -68,15 +69,12 @@ $ = function(s) { return document.getElementById(s); };
         }
     );*/
 
-    var type;
-
     eNamed( 'ui.play', function (data) {
-        clearTimeout(streema.player.timeout)
+        clearTimeout(streema.player.timeout);
 
-        var radio = data.what
-        selectedRadio = JSON.parse(radio)
-        var types = {'ram': 'audio/x-pn-realaudio'}
-        var defaultType = 'application/x-mplayer2';
+        var radio = data.what, types = {'ram': 'audio/x-pn-realaudio'},
+            defaultType = 'application/x-mplayer2';
+        selectedRadio = JSON.parse(radio);
         type = defaultType;
         //console.log(radio)
        /* <embed type="application/x-vlc-plugin" 
@@ -87,12 +85,12 @@ $ = function(s) { return document.getElementById(s); };
         */
 
         if ( popup ) {
-            popup.close()
+            popup.close();
         }
 
-        $('player').innerHTML = ''
+        $('player').innerHTML = '';
 
-        if (navigator.appVersion.indexOf("Win")!=-1) {
+        if (navigator.appVersion.indexOf("Win")!==-1) {
             type = selectedRadio.streams[0].type in types ? 
                 types[selectedRadio.streams[0].type] : defaultType;
         }
@@ -105,18 +103,19 @@ $ = function(s) { return document.getElementById(s); };
             '<embed type="%s" id="handle" src="%s" text="audio/mpeg" />', 
             type, selectedRadio.streams[0].url);
 
-        if ( $('handle').controls )
+        if ( $('handle').controls ) {
             $('handle').controls.play();
+        }
 
-        console.log('Setting timeout')
+        console.log('Setting timeout');
         timeout = setTimeout ( 
-            'streema.player.playTimeout()', data.timeout )
-        console.log('setting buffering')
+            'streema.player.playTimeout()', data.timeout );
+        console.log('setting buffering');
 
     });
 
     eNamed('player.streema.stop', function () {
-        clearTimeout(timeout)
+        clearTimeout(timeout);
 
          if ( popup ) {
             popup.close()

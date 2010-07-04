@@ -24,12 +24,14 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global streema chrome*/
 
 (function () {
 
-    var radiolist;
+    var radiolist, 
+    eNamed = streema.eventBus.addNamedListener,
 
-    var updateRadioList = function () {
+    updateRadioList = function () {
         var xhr = new XMLHttpRequest();
 
         /* When we have loaded a previous radiolist we show it to the user 
@@ -43,7 +45,7 @@
         }
 
         xhr.onreadystatechange =  function() {
-            if ( xhr.readyState == 4 ) {
+            if ( xhr.readyState === 4 ) {
                 radiolist = JSON.parse(xhr.responseText);
                 chrome.extension.sendRequest(
                     {'method': 'radiolist.update', 
@@ -57,8 +59,6 @@
             true);
         xhr.send();
     };
-
-    var eNamed = streema.eventBus.addNamedListener;
 
     eNamed( 'ui.streemaIcon', updateRadioList);
 

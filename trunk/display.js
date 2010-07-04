@@ -24,19 +24,22 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+/*global streema sprintf chrome webkitNotifications escape*/
+
 (function () {
 
-    var selectedRadio;
-    var eNamed = streema.eventBus.addNamedListener; 
-    
-    var currentRadio = function (prefix, text) {
-        if ( typeof selectedRadio == 'undefined' || 
+    var notification, 
+    stat = 'Ready. Click on a radio station above to start listening',
+    selectedRadio, eNamed = streema.eventBus.addNamedListener,    
+    currentRadio = 
+    function (prefix, text) {
+        if ( typeof selectedRadio === 'undefined' || 
             selectedRadio === null ) {
             return '';
         }
 
         if ( text ) {
-            return sprintf('%s %s', prefix, selectedRadio.name)
+            return sprintf('%s %s', prefix, selectedRadio.name);
         }
 
         return sprintf('%s <a href="%s" target="_blank">%s</a>',
@@ -44,13 +47,8 @@
                     'http://streema.com' + 
                     selectedRadio.spotUrl,
                     selectedRadio.name);
-    }
-
-    var notification;
-
-    var stat = 'Ready. Click on a radio station above to start listening'; 
-
-    var betterDisplay = function(d) {
+    },
+    betterDisplay = function(d) {
         if ( 'badge' in d ) {
             chrome.browserAction.setBadgeText({text: d.badge});
         }
@@ -61,7 +59,7 @@
 
         if ('state' in d) {
             chrome.extension.sendRequest({'method': 'display.status', 
-                                        'stat': d.state})
+                                        'stat': d.state});
         }
 
         if ('notification' in d) {
@@ -79,15 +77,14 @@
             notification.show();
         
         }
-    };
-
-    var display = function (msg, badge, statP) {
-        console.log('Displaying: ' + msg + ' ' + badge)
+    },
+    display = function (msg, badge, statP) {
+        console.log('Displaying: ' + msg + ' ' + badge);
         badge = badge || '';
         stat = statP || currentRadio(msg) || stat;
         chrome.browserAction.setBadgeText({text: badge});
         chrome.extension.sendRequest({'method': 'display.status', 
-                                        'stat': stat})
+                                        'stat': stat});
         chrome.browserAction.setTitle({title: msg});
 
         var body = currentRadio(msg) || badge;
@@ -110,14 +107,14 @@
         
         // Then show the notification.
         notification.show();
-    }
+    };
 
     eNamed('player.error', function() {
         display('Currently not working ', '!'); 
     });
     
     eNamed('ui.play', function(data) {
-        selectedRadio = JSON.parse(data.what)
+        selectedRadio = JSON.parse(data.what);
         display('Playing');
     });
     
@@ -139,10 +136,7 @@
     });
 
     eNamed('ui.emptyRadioList', function() {
-        var loggedIn = sprintf('<span class="error">%s \
-        <a href="http://streema.com/account/login" target="_blank">%s</a> \
-    %s<a href="http://streema.com/account/register" target="_blank">%s</a>%s\
-        </span>',
+        var loggedIn = sprintf('<span class="error">%s<a href="http://streema.com/account/login" target="_blank">%s</a>%s<a href="http://streema.com/account/register" target="_blank">%s</a>%s</span>',
             'Please  ',
             'log in',
             ' or ',
@@ -156,6 +150,6 @@
 
     });
     
-    console.log('display module loaded ok')
+    console.log('display module loaded ok');
 
 }());
