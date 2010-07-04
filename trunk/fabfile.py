@@ -25,8 +25,33 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-
 from fabric.api import local
+import os
+
+def _walk_this_way(cmd):
+    for root, dirs, files in os.walk(os.path.split(__file__)[0]):
+        for d in dirs:
+            if d.startswith('.svn'):
+                dirs.remove(d)
+            if d == 'ext':
+                # sorry, I'm not gonna check 3rd parties code
+                dirs.remove(d)
+
+        for f in files:
+            if f.endswith('.js'):
+                filename = os.path.join(root, f)
+                filename = filename.replace("\"", "\\\"").replace("\'", "\\\'")
+                local(cmd % filename, capture=False)
+    
+
+def jslint():
+    """ Check the code using jslint"""
+    _walk_this_way('js jslint \"%s\"')
+
+def check():
+    """ Compile the code using Google Closure Compiler"""
+    _walk_this_way('java -jar compiler.jar  --formatting PRETTY_PRINT --jscomp_dev_mode EVERY_PASS --summary_detail_level 3 --js \"%s\" > /dev/null ')
+
 
 def zip():
     """ Creates a zipfile to upload to the chrome extension gallery """ 
