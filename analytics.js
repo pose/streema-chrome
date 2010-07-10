@@ -29,7 +29,14 @@
 var _gaq = _gaq || [];
 
 (function() {   
-    var radio, eNamed = streema.eventBus.addNamedListener; 
+    var radio, eNamed = streema.eventBus.addNamedListener,
+    log = function (name, type) {
+        console.log('Logging to Analytics: [' + name + ',' + type + ']');
+        _gaq.push(['_trackEvent', name, type]);
+    },
+    radioSerialize = function() {
+        return 'Radio ' + radio.name + ' [' + radio.id +']';
+    };
 
     if ( !streema.config['analytics.enabled'] ) {
         console.log('Analytics disabled');
@@ -44,28 +51,19 @@ var _gaq = _gaq || [];
      _gaq.push(['_trackPageview']);
 
      (function() {
-        var ga = document.createElement('script'); 
+        var ga = document.createElement('script'),
+        s = document.getElementsByTagName('script')[0]; 
         ga.type = 'text/javascript'; ga.async = true;
         ga.src = 'https://ssl.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; 
         s.parentNode.insertBefore(ga, s);
-     })();
+     }());
 
     if ( !streema || ! streema.eventBus ) {
         return;
     }
 
-    var log = function (name, type) {
-        console.log('Logging to Analytics: [' + name + ',' + type + ']');
-        _gaq.push(['_trackEvent', name, type]);
-    };
-
-    var radioSerialize = function() {
-        return 'Radio ' + radio.name + ' [' + radio.id +']';
-    };
-
     eNamed('ui.play', function (data){ 
-        radio = JSON.parse(data.what)
+        radio = JSON.parse(data.what);
         log(radioSerialize(), 'selected');
     });
 
@@ -82,7 +80,7 @@ var _gaq = _gaq || [];
     });
     
     eNamed('player.playing', function (data) {
-        if ( data['status'] !== 'ok' ) {
+        if ( data.status !== 'ok' ) {
             log(radioSerialize(), 'playing (but can\'t check)');
             return; 
         }
@@ -90,6 +88,6 @@ var _gaq = _gaq || [];
         log(radioSerialize(), 'playing');
     });
 
-    console.log('analytics module loaded ok')
+    console.log('analytics module loaded ok');
 }());
 

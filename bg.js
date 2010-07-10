@@ -84,12 +84,6 @@ var $ = function (s) {
                     src="' + radio.streams[0].url +'" />
         */
 
-        if ( popup ) {
-            popup.close();
-        }
-
-        $('player').innerHTML = '';
-
         if (navigator.appVersion.indexOf("Win")!==-1) {
             type = selectedRadio.streams[0].type in types ? 
                 types[selectedRadio.streams[0].type] : defaultType;
@@ -97,6 +91,12 @@ var $ = function (s) {
     });
 
     eNamed( 'player.streema.error', function (data) {
+
+        if ( popup ) {
+            popup.close();
+        }
+
+        $('player').innerHTML = '';
         // text="audio/mpeg" is a hack for google chrome to play 
         // the file right
         $('player').innerHTML = sprintf(
@@ -109,7 +109,8 @@ var $ = function (s) {
 
         console.log('Setting timeout');
         timeout = setTimeout ( 
-            'streema.player.playTimeout()', data.timeout );
+            streema.player.playTimeout, 
+            streema.config['playback.timeout']);
         console.log('setting buffering');
 
     });
@@ -118,7 +119,7 @@ var $ = function (s) {
         clearTimeout(timeout);
 
          if ( popup ) {
-            popup.close()
+            popup.close();
         }
 
        $('player').innerHTML = '' ;
