@@ -27,9 +27,41 @@
 /*global localStorage chrome*/
 
 var streema;
-var STREEMA_VERSION = '0.2.3';
 
 (function () {
+    var getDefaults = function () {
+        var config = {};
+
+        config['analytics.enabled'] = true;
+        config['analytics.account'] = 'UA-16445553-1';
+
+        config['playback.timeout'] = 15000;
+        
+        /* Notifications*/
+        config['notifications.timeout'] = 10000;
+        config['notifications.enabled'] = true;
+        
+        /* Songinfo */
+        config['songinfo.enabled'] = true;
+        config['songinfo.check_every'] = 0.75;
+
+        return config;
+    },
+
+    /* If updating from a previous version, create the key with the default 
+    value if it does not exist */
+    checkNewKeys = function () {
+        var key;
+        var defaults = getDefaults();
+        for ( key in defaults ) {
+            if ( streema.config[key] === undefined ) {
+                streema.config[key] = defaults[key];
+                console.log('Creating key: ' + key + ' with value: ' + 
+                    defaults[key]);
+            }
+        }
+    };
+
     if ( typeof streema === 'undefined') {
         streema = {};
     }
@@ -45,35 +77,14 @@ var STREEMA_VERSION = '0.2.3';
 
     streema.loadConfig = function () {
         streema.config = JSON.parse(localStorage['config']);
-    }
+    };
 
     if ( !localStorage['config'] ) {
-        streema.config['analytics.enabled'] = true;
-        streema.config['analytics.account'] = 'UA-16445553-1';
-
-        streema.config['playback.timeout'] = 15000;
-
-        /* Notifications*/
-        streema.config['notifications.timeout'] = 10000;
-        streema.config['notifications.enabled'] = true;
-    
-        streema.config['version'] = STREEMA_VERSION;
-
+        streema.config = getDefaults(); 
         localStorage['config'] = JSON.stringify(streema.config);
     } else {
         streema.loadConfig();
-        if ( STREEMA_VERSION !== streema.config['version'] ) {
-            streema.config['analytics.enabled'] = streema.config['analytics.enable'] === undefined ? true : streema.config['analytics.enable'];
-            streema.config['notifications.enabled'] = streema.config['notifications.enable'] === undefined ? true : streema.config['notifications.enable'];
-            streema.config['version'] = STREEMA_VERSION;
-            if ( 'analytics.enable' in streema.config ) {
-                delete streema.config['analytics.enable'];
-            }
-            if ( 'notifications.enable'  in streema.config ) {
-                delete streema.config['notifications.enable'];
-            }
-            streema.saveConfig();
-        }
+        checkNewKeys();
     }
 
     console.log('config module loaded ok');

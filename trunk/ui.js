@@ -26,11 +26,13 @@
 
 /*global window streema chrome sprintf*/
 
+var ui = {};
+
 window.addEventListener('load',function() {
         
     var $ = function (id) { 
         return document.getElementById(id); 
-    },radios = [], selectedRadioId, ui = {}, config = streema.config, 
+    },radios = [], selectedRadioId, config = streema.config, 
     RADIO_TIMEOUT = config['playback.timeout'], gotRadios = false, 
     gotCurrentRadio = false, drawn = false, stat, 
     eNamed = streema.eventBus.addChromeNamedListener,
@@ -59,10 +61,8 @@ window.addEventListener('load',function() {
                 selectedRadioId === radio.id ? 'selected' : '';
                 
             return sprintf(
-                '<li class="%s" onclick="ui.play.call(this,%s); return false;">\
-                        <a href="#">%s</a> | <span class="band">%s</span> \
-                    </li>',
-                klass, radio.id, radio.name, radio.country)
+                '<li class="%s" onclick="ui.play.call(this,%s); return false;">                      <a href="#">%s</a> | <span class="band">%s</span> </li>',
+                klass, radio.id, radio.name, radio.country);
         }).join('\n') + '</ul>';
 
         var selected = document.getElementsByClassName('selected');
@@ -129,7 +129,7 @@ window.addEventListener('load',function() {
 
     eNamed('display.status', function (data) {
         stat = data.stat;
-        console.log('updating status to ' + stat)
+        console.log('updating status to ' + stat);
         if (drawn) {
             $('status').innerHTML = stat;
         }

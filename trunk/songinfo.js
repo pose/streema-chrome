@@ -28,9 +28,15 @@
 
 (function () {
 
-    var MINUTES_BETWEEN_SONG_INFO = 0.75,
+
+    var MINUTES_BETWEEN_SONG_INFO = streema.config['songinfo.check_every'],
     eNamed = streema.eventBus.addNamedListener, songInfo, radio, timer,
     updateSongInfo = function () {
+        
+        if ( !streema.config['songinfo.enabled'] ) {
+            return;
+        }
+
         if ( !radio ) {
             return;
         }
@@ -79,8 +85,6 @@
         xhr.send();
     };
 
-
-
     eNamed('player.playing', updateSongInfo);
 
     eNamed('song.checkSong', updateSongInfo);
@@ -88,6 +92,9 @@
     eNamed('ui.play', function (data) {
         if ( timer !== undefined ) {
             clearInterval(timer);
+        }
+        if ( !streema.config['songinfo.enabled'] ) {
+            return;
         }
         radio = JSON.parse(data.what);
         songInfo = undefined;
@@ -97,7 +104,9 @@
     });
 
     eNamed('ui.stop', function() {
-        clearInterval(timer);
+        if (timer !== undefined) {
+            clearInterval(timer);
+        }
     });
     
     eNamed('player.error', function() {
