@@ -29,7 +29,6 @@
 var streema;
 
 (function () {
-    JSONdummy = JSON;
     var getDefaults = function () {
         var config = {};
 

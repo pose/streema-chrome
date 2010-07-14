@@ -45,11 +45,6 @@ window.addEventListener('load', function () {
         };
     }
 
-    /* Mootools hack*/
-    JSON.parse = JSONdummy.parse;
-    JSON.stringify = JSONdummy.stringify;
-
-    
     eNamed( 'ui.play', function (data) {
         if (failed) {
             streema.eventBus.sendRequest({'method': 'player.streema.stop'});
