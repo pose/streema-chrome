@@ -29,11 +29,26 @@
 window.addEventListener('load', function () {
 
     var eNamed = streema.eventBus.addNamedListener, selectedRadio,
-    player = new ST.player.Player(document.getElementById('player')),
+    player,
     failed;
-    
-    ST.player.flash.SWF_PATH = 'http://streema.com/static/flash/player.swf';
-    //ST.player.flash.PLAYLIST_PROXY_URL_TPL="http://streema.com/proxy/playlist/{sid}";
+
+    if (typeof ST !== 'undefined') {
+        player = new ST.player.Player(document.getElementById('player'))
+        ST.player.flash.SWF_PATH = 'http://streema.com/static/flash/player.swf';
+        ST.player.flash.PLAYLIST_PROXY_URL_TPL="http://streema.com/proxy/playlist/{sid}";
+    } else {
+        player = {
+        open: function () {
+            return {playable: false};
+        },
+        stop: function () { }
+        };
+    }
+
+    /* Mootools hack*/
+    JSON.parse = JSONdummy.parse;
+    JSON.stringify = JSONdummy.stringify;
+
     
     eNamed( 'ui.play', function (data) {
         if (failed) {
@@ -45,15 +60,16 @@ window.addEventListener('load', function () {
         failed = false;
 
         selectedRadio = JSON.parse(radio);
-        console.log('Sending to streema player: ' + JSON.stringify(selectedRadio));
+
+//        console.log('Sending to streema player: ' + JSON.stringify(selectedRadio));
         result = player.open(selectedRadio);
         
         if ( result.playable ) {
             player.play();
+            st = player.getState();
         }
         console.log(selectedRadio.name + ' is playable by Streema? ' + (result.playable ? 'yes': 'no :('));
 
-        st = player.getState();
 
         if ( !result.playable || (st !== ST.player.api.states.STATE_CONNECTING &&
             st !== ST.player.api.states.STATE_BUFFERING &&
