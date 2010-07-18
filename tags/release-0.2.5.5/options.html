@@ -1,0 +1,58 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="streema.css" />
+      <script type="text/javascript" src="ext/sprintf.js"></script>
+      <script type="text/javascript" src="config.js"></script>
+      <script>
+         load_config = function () {
+            var checkbox = function (config,name) {
+              this.checked = config[name]
+              this.addEventListener('change', function (ev) {
+                  config[name] = this.checked;
+                  streema.saveConfig()
+              }, false)
+            }
+
+            var text = function (config, name) {
+               this.value = config[name]
+               this.addEventListener('change', function (ev) {
+                  var value = parseInt(this.value);
+                  if (isNaN(value)) {
+                     this.value = config[name]
+                     return
+                  }
+                  config[name] = value
+                  this.value = config[name]
+                  streema.saveConfig()
+              }, true)
+            }
+
+            var type_handlers = {'checkbox': checkbox, 'text': text}
+            var option;
+            for ( option in streema.config ) {
+               var elem = document.getElementsByName(option);
+               elem = elem[0]
+               if (elem && elem.type in type_handlers) {
+                  type_handlers[elem.type].call(elem, streema.config, option)
+               }
+            }
+         }
+      </script>
+   </head>
+   <body class="options" onload="load_config()">
+      <h1>Under the hood</h1>
+      <h2>Desktop Notifications</h2>
+      <p><a href="http://code.google.com/chrome/extensions/notifications.html" target="_blank">Desktop notifications</a> notify users that something has happened. Notifications appear outside the browser window.</p>
+      <input name="notifications.enabled" type="checkbox" /><label for="notifications.enabled"> Enable Desktop Notifications</label>
+      <br />
+      <label for="notifications.timeout">How many time they must remain shown? (millisecs) </label><input name="notifications.timeout" type="text" />
+      <h2>Google Analytics</h2>
+      <input name="analytics.enabled" type="checkbox" /><label for="analytics.enabled"> Enable Google Analytics usage logging</label>
+      <h2>Song Info</h2>
+      <input name="songinfo.enabled" type="checkbox" /><label for="songinfo.enabled"> Enable song info (note: only works for some radios)</label>
+      <br />
+      <label for="notifications.timeout">Check for new song every <input name="songinfo.check_every" type="text" / >minutes</label>
+
+   </body>
+</html>
+
