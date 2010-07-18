@@ -68,10 +68,13 @@ def _increase_version():
     f.close()
     return version
 
-def zip():
+def zip(version=None):
     """ Creates a zipfile to upload to the chrome extension gallery """ 
     local('svn export . streema-prod')
-    local('zip -r streema.zip streema-prod')
+    if version is not None:
+        local('zip -r streema-%s.zip streema-prod' % version)
+    else:
+        local('zip -r streema.zip streema-prod')
     local('rm -rf streema-prod')
 
 def release():
@@ -80,6 +83,6 @@ def release():
     msg = prompt('Please enter a release message:')
     local('svn ci -m "%s"' % msg.replace('"', '\\"'), capture=False)
     local('svn copy https://streema-chrome.googlecode.com/svn/trunk https://streema-chrome.googlecode.com/svn/tags/release-%(version)s -m "Tagging release %(version)s"' % {'version': version}, capture=False)
-    zip()
+    zip(version)
 
     
