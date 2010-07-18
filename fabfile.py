@@ -79,7 +79,7 @@ def release():
     version = _increase_version()
     msg = prompt('Please enter a release message:')
     local('svn ci -m "%s"' % msg.replace('"', '\\"'), capture=False)
-    local('svn copy https://streema-chrome.googlecode.com/svn/trunk https://streema-chrome.googlecode.com/svn/tags/release-%(version)s -m "Tagging release %s(version)"' % {'version': version}, capture=False)
+    local('svn copy https://streema-chrome.googlecode.com/svn/trunk https://streema-chrome.googlecode.com/svn/tags/release-%(version)s -m "Tagging release %(version)s"' % {'version': version}, capture=False)
     zip()
 
     
