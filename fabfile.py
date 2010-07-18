@@ -27,6 +27,7 @@
 
 from fabric.api import local
 import os
+import json
 
 def _walk_this_way(cmd):
     for root, dirs, files in os.walk(os.path.split(__file__)[0]):
@@ -52,6 +53,17 @@ def check():
     """ Compile the code using Google Closure Compiler"""
     _walk_this_way('java -jar compiler.jar  --formatting PRETTY_PRINT --jscomp_dev_mode EVERY_PASS --summary_detail_level 3 --js \"%s\" > /dev/null ')
 
+def up():
+    """Adds a number to the current version number"""
+    f = open('manifest.json','rw+')
+    manifest = json.load(f)
+    manifest_chunks = manifest[u'version'].split('.')
+    manifest[u'version'] = '.'.join(manifest_chunks[:-1] + 
+        [str(int(manifest_chunks[-1])+1)] )
+    f.seek(0)
+    f.truncate(0)
+    json.dump(manifest, f, indent=2)
+    f.close()
 
 def zip():
     """ Creates a zipfile to upload to the chrome extension gallery """ 
