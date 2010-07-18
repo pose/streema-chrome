@@ -25,6 +25,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
+from fabric.operations import prompt
 from fabric.api import local
 import os
 import json
@@ -76,7 +77,8 @@ def zip():
 def release():
     """Makes a new zip release"""
     version = _increase_version()
-    local('svn ci', capture=False)
+    msg = prompt('Please enter a release message:')
+    local('svn ci -m %s' % msg, capture=False)
     local('svn copy https://streema-chrome.googlecode.com/svn/trunk https://streema-chrome.googlecode.com/svn/tags/release-%(version)s -m "Tagging release %s(version)"' % {'version': version}, capture=False)
     zip()
 
