@@ -53,17 +53,19 @@ def check():
     """ Compile the code using Google Closure Compiler"""
     _walk_this_way('java -jar compiler.jar  --formatting PRETTY_PRINT --jscomp_dev_mode EVERY_PASS --summary_detail_level 3 --js \"%s\" > /dev/null ')
 
-def up():
+def _increase_version():
     """Adds a number to the current version number"""
     f = open('manifest.json','rw+')
     manifest = json.load(f)
     manifest_chunks = manifest[u'version'].split('.')
     manifest[u'version'] = '.'.join(manifest_chunks[:-1] + 
         [str(int(manifest_chunks[-1])+1)] )
+    version = manifest[u'version']
     f.seek(0)
     f.truncate(0)
     json.dump(manifest, f, indent=2)
     f.close()
+    return version
 
 def zip():
     """ Creates a zipfile to upload to the chrome extension gallery """ 
@@ -71,3 +73,11 @@ def zip():
     local('zip -r streema.zip streema-prod')
     local('rm -rf streema-prod')
 
+def release():
+    """Makes a new zip release"""
+    version = _increase_version()
+    local('svn ci', capture=False)
+    local('svn copy https://streema-chrome.googlecode.com/svn/trunk https://streema-chrome.googlecode.com/svn/tags/release-%(version)s -m "Tagging release %s(version)"' % {'version': version}, capture=False)
+    zip()
+
+    
