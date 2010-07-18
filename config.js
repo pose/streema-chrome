@@ -77,6 +77,9 @@ var streema;
 
     streema.loadConfig = function () {
         streema.config = JSON.parse(localStorage['config']);
+        if (navigator.appVersion.indexOf("Mac")!=-1) {
+            config['analytics.enabled'] = false;
+        }
     };
 
     if ( !localStorage['config'] ) {
