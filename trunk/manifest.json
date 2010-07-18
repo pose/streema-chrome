@@ -1,22 +1,22 @@
 {
   "minimum_chrome_version": "5", 
-  "name": "Radio Player for Streema", 
+  "description": "Welcome to the best way to experience Streema in Chrome. Install this radio tuner and bring radio back into your life!", 
   "icons": {
     "128": "img/streema_logo_alt2.png", 
     "48": "img/streema_logo_alt2.png", 
     "16": "img/streema_logo_small.png"
   }, 
-  "description": "Welcome to the best way to experience Streema in Chrome. Install this radio tuner and bring radio back into your life!", 
-  "version": "0.2.5.4", 
+  "version": "0.2.5.5", 
   "options_page": "options.html", 
   "background_page": "background.html", 
+  "permissions": [
+    "http://*.streema.com/*", 
+    "notifications"
+  ], 
   "browser_action": {
     "popup": "popup.html", 
     "default_icon": "img/streema_logo_alt2.png", 
     "default_title": "Radio Player for Streema"
   }, 
-  "permissions": [
-    "http://*.streema.com/*", 
-    "notifications"
-  ]
+  "name": "Radio Player for Streema"
 }
