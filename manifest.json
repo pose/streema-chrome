@@ -1,13 +1,13 @@
 {
   "minimum_chrome_version": "5", 
-  "description": "Welcome to the best way to experience Streema in Chrome. Install this radio tuner and bring radio back into your life!", 
+  "description": "Tune in to AM, FM, and Internet Radio Stations from Every Genre and from all over the world. (Powered by Streema, a tuner with 20,000+ radio stations)", 
   "icons": {
     "128": "img/streema_logo_alt2.png", 
     "48": "img/streema_logo_alt2.png", 
     "16": "img/streema_logo_small.png"
   }, 
   "name": "Radio Player for Streema", 
-  "version": "0.2.5.6", 
+  "version": "0.2.5.8", 
   "options_page": "options.html", 
   "background_page": "background.html", 
   "browser_action": {
