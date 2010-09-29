@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16px"
+   height="16px"
+   id="svg3867"
+   version="1.1"
+   inkscape:version="0.47pre4 r22446"
+   inkscape:export-filename="/home/apose/Desktop/streema/play.png"
+   inkscape:export-xdpi="56.593895"
+   inkscape:export-ydpi="56.593895"
+   sodipodi:docname="New document 19">
+  <defs
+     id="defs3869">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 8 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="16 : 8 : 1"
+       inkscape:persp3d-origin="8 : 5.3333333 : 1"
+       id="perspective3875" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="31.392433"
+     inkscape:cx="5.0013921"
+     inkscape:cy="9.3627546"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:grid-bbox="true"
+     inkscape:document-units="px"
+     inkscape:window-width="935"
+     inkscape:window-height="784"
+     inkscape:window-x="10"
+     inkscape:window-y="86"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3872">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       sodipodi:type="star"
+       style="fill:#666666;stroke:none"
+       id="path3877"
+       sodipodi:sides="3"
+       sodipodi:cx="1.3514853"
+       sodipodi:cy="0.77326721"
+       sodipodi:r1="6.9377699"
+       sodipodi:r2="3.4688849"
+       sodipodi:arg1="0.0064934152"
+       sodipodi:arg2="1.053691"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 8.2891089,0.81831671 -2.1563406,6.7589008 -2.0783125,-5.2574158 8.2891089,0.81831671 z"
+       transform="matrix(1.3234077,-0.00371064,0.00371064,1.3234077,3.9278655,6.998605)"
+       inkscape:export-filename="/home/apose/play.png"
+       inkscape:export-xdpi="56.593895"
+       inkscape:export-ydpi="56.593895" />
+  </g>
+</svg>
