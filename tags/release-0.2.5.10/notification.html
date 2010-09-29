@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="streema.css" />
+      <script type="text/javascript" src="ext/sprintf.js"></script>
+      <script type="text/javascript" src="config.js"></script>
+   </head>
+   <body class="notification">
+      <div id="content"></div>
+      <script>
+         (function() {
+            var params = document.location.hash;
+            params = params.substr(1);
+            params = params.split('&');
+            params = params.map( function (pair) {
+               return pair.split('=');
+            });
+            var d = {};
+            params.forEach( function (pair) {
+               d[pair[0]] = pair[1];
+            });
+            var title = unescape(d.title);
+            var body = unescape(d.body);
+
+            document.getElementById('content').innerHTML =  sprintf('<img src="%s" /><div id="title">%s</div><div id="body">%s</div>', 'img/streema_logo_alt2.png', title, body);
+            setTimeout( function () { window.close() }, streema.config['notifications.timeout']);
+
+         }());
+      </script>
+   </body>
+</html>
+

@@ -1,0 +1,22 @@
+{
+  "minimum_chrome_version": "5", 
+  "description": "Tune in to AM, FM, and Internet Radio Stations from Every Genre and from all over the world (Powered by Streema, with 20,000+ radios)", 
+  "icons": {
+    "128": "img/streema_logo_alt2.png", 
+    "48": "img/streema_logo_alt2.png", 
+    "16": "img/streema_logo_small.png"
+  }, 
+  "name": "Radio Player for Streema", 
+  "version": "0.2.5.10", 
+  "options_page": "options.html", 
+  "background_page": "background.html", 
+  "browser_action": {
+    "popup": "popup.html", 
+    "default_icon": "img/streema_logo_alt2.png", 
+    "default_title": "Radio Player for Streema"
+  }, 
+  "permissions": [
+    "http://*.streema.com/*", 
+    "notifications"
+  ]
+}
