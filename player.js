@@ -83,6 +83,10 @@ window.addEventListener('load', function () {
             }, data.timeout);
 
     });
+
+    eNamed('player.streema.error', function () {
+        streema.eventBus.sendRequest({'method': 'player.error'});
+    });
     
     eNamed('ui.stop', function () {
         player.stop();
