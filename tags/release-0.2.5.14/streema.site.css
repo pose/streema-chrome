@@ -1,0 +1,4650 @@
+BODY {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+FORM {
+    margin: 0;
+    padding: 0;
+}
+
+A {
+    border: none;
+    color: #888;
+    text-decoration: none;
+}
+A:hover {
+    text-decoration: underline;
+}
+
+IMG {
+    border: none;
+    vertical-align: middle;
+}
+
+BUTTON {
+    text-align: center;
+    cursor: pointer;
+}
+
+THEAD {
+    background-color: #ddd;
+    height: 20px;
+}
+THEAD TR {
+    background-color: #ddd;
+    height: 20px;
+}
+TH {
+    font: bold 11px Arial, Helvetica, Sans serif;
+    color: #666666;
+}
+
+TFOOT TD {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #888;
+    background-color: #fff;
+    padding: 2px;
+    text-align: right;
+}
+
+#general {
+    margin: 0 auto;
+    width:975px;
+    background-image:url(../images/lineas.jpg);
+    background-repeat:repeat-y;
+}
+
+#general #flashLayout{
+    font-family: Arial; 
+    font-size: 20px; 
+    font-weight: bold;
+    margin-top: 140px;
+    height: 180px;
+}
+
+#header_home {
+    margin-left: 25px;
+    width:922px;
+}
+
+#shortHeader {
+    height: 70px;
+    background-image: url(../images/background.1px.png);
+    overflow: hidden;
+}
+
+.headerRegistered {
+
+}
+
+.headerUnregistered {
+
+}
+
+.commonHeader {
+    background-image: url(../images/header.radiostations.jpg);
+    background-repeat: no-repeat;
+}
+
+.commonHeader #logo {
+    width: 150px;
+    position: absolute;
+    top: 11px;
+    left: 20px;
+}
+
+
+#shortHeader #logo {
+    float: left;
+    width: 118px;
+    margin: 10px 0 0 15px;
+}
+
+#shortHeader #logo a {
+    background: #529CFF url('../images/streema.sprite.1.png') -10px -440px no-repeat;
+    width: 118px;
+    height: 25px;
+    display: block;
+    text-indent: -9999px;
+}
+
+#shortHeader #headerTopContent {
+    overflow: hidden;
+    height: 44px;
+}
+
+#shortHeader a, #shortHeader button {
+    font-weight: bold;
+}
+
+#shortHeader {
+    font-family: Arial;
+}
+
+#shortHeader #mainMenu {
+    float: left;
+    margin: 18px 0 0 35px;
+}
+
+#shortHeader #mainMenu div {
+    float: left;
+    margin-right: 20px;
+}
+
+#shortHeader #mainMenu a {
+    font-size: 14px;
+}
+
+#shortHeader #panelUser {
+    float: right;
+    margin: 14px 0 0 0;
+}
+
+#shortHeader #panelUser a, #shortHeader #panelUser #userLogin {
+    font-size: 12px;
+    color: white;
+}
+
+#shortHeader #panelUser #userLogin {
+    background: transparent url("../images/streema.sprite.1.png") -10px -8px no-repeat;
+    border: none;
+    padding: 4px 0;
+    width: 52px;
+    margin: 0 10px 0 5px;
+}
+
+#shortHeader #panelLogout {
+    margin: 18px 10px 0 0;
+    float: right;
+    max-width: 400px;
+}
+
+#shortHeader #panelLogout a, #shortHeader #panelLogout {
+    font-size: 12px;
+    color: white;
+}
+
+#shortHeader #headerBottomContent {
+    margin: 4px 0 0 15px;
+    overflow: hidden;
+}
+
+#shortHeader #headerSlogan {
+    clear: both;
+    color: white;
+    width: 500px;
+    float: left;
+    margin-top: 2px;
+}
+
+#shortHeader #headerSlogan a {
+    color: white;
+    font-weight: normal;
+}
+
+#shortHeader #siteSearch {
+    float: right;
+    margin: 0 10px 0 0;
+}
+
+#shortHeader label {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#shortHeader #panelCaption {
+    float: left;
+    overflow: hidden;
+    width: 350px;
+}
+
+.commonHeader #panelCaption {
+    position: absolute;
+    top: 65px;
+    left: 10px;
+}
+
+#panelCaption .userAvatar {
+    width: 22px;
+    margin: 0px 6px;
+    float: left;
+    text-align: left;
+}
+
+#shortHeader #panelCaption .headerCaption {
+    width: 280px;
+    margin-top: 3px;
+}
+
+#panelCaption .headerCaption {
+    font: 12px Tahoma, Helvetica, Sans serif;
+    color: #ffffff;
+    margin: 0 0 0 8px;
+    float: left;
+}
+
+#panelLogout div.userName {
+    float: left;
+    margin: 0 2px 0 0;
+}
+#panelCaption .headerCaption a {
+    color: #FFFFFF;
+}
+#panelCaption A#userAccount {
+}
+
+.commonHeader #panelLogout {
+    position: absolute;
+    right: 20px;
+    top: 74px;
+    font: 12px Tahoma, Helvetica, Sans serif;
+    color: #ffffff;
+}
+
+.commonHeader #panelLogout a {
+    color: #ffffff;
+}
+
+.headerUnregistered .headerCaption {
+    margin-left: 24px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.headerZone1 {
+    height: 105px;
+    position: relative;
+}
+.headerZone2 {
+    overflow: hidden;
+}
+
+div#topRightHeader {
+    margin: 8px 4px 0px 0px;
+    overflow: hidden;
+    float: right;
+}
+
+.headerZone1 #siteSearch {
+    float: right;
+    margin-right: 4px;
+    overflow: hidden;
+}
+
+#siteSearch label, #siteSearch input, #siteSearch button {
+    display: block;
+    float: left;
+}
+
+#siteSearch label {
+    margin-top: 1px;
+}
+
+#shortHeader #siteSearchBox {
+    margin-left: 4px;
+    padding: 1px;
+    border: none;
+    font-size: 10px;
+    width: 190px;
+    height: 15px;
+    font-size: 11px;
+    outline: none;
+}
+
+#shortHeader #siteSearchSubmit {
+    padding: 0px 8px;
+    height: 17px;
+    margin: 0;
+    border: none;
+    background: white url(../images/streema.sprite.1.png) -8.5px -133px no-repeat;
+}
+
+.commonHeader #panelUser {
+    float: right;
+    font: normal 14px Arial, Helvetica, Sans serif;
+    color: white;
+    text-align: right;
+    margin: 2px 8px 0px 0px;
+}
+
+.headerNoPlayer #panelUser {
+    position: absolute;
+    left: 730px;
+    top: 24px;
+    width: 180px;
+    font: normal 14px Arial, Helvetica, Sans serif;
+    color: white;
+    text-align: right;
+}
+
+.commonHeader #panelUser A {
+    color: white;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.commonHeader #panelUser A#userAccount {
+    font-style: italic;
+}
+
+.commonHeader #mainMenu {
+    position: absolute;
+    top: 70px;
+    left: 420px;
+}
+
+.commonHeader #mainMenu DIV {
+    float: left;
+    font: bold 16px Arial, Helvetica, Sans serif;
+    padding: 0px 25px 0px 2px;
+}
+
+.commonHeader #mainMenu DIV.last {
+    padding-right: 0;
+}
+
+#mainMenu A {
+    color: #a8ccfc;
+}
+#mainMenu .active {
+    color: white;
+}
+
+#panelPlayer {
+    background: transparent url(../images/back_player_panel.jpg) no-repeat top left;
+    width: 922px;
+    height: 67px;
+}
+#panelPlayer #playerPlay {
+    float: left;
+    width: 54px;
+    height: 54px;
+    margin: 5px 8px 5px 54px;
+    background: transparent url(../images/btn_player_play.png) no-repeat top left;
+    vertical-align: middle;
+    border: none;
+    color: white;
+}
+#panelPlayer #playerPlay.stop {
+    background: transparent url(../images/btn_player_stop.png) no-repeat top left;
+}
+
+#panelPlayer #playerDisplay {
+    float: left;
+    width: 441px;
+    height: 35px;
+    margin: 11px 8px;
+    padding: 5px 8px;
+    background: transparent url(../images/back_player_display.jpg) repeat-x top left;
+    vertical-align: middle;
+    color: #007580;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    line-height: 130%;
+}
+#panelPlayer #playerDisplay a {
+    color: #00eaff;
+}
+
+#panelPlayer .buttons {
+    float: right;
+    width: 136px;
+    text-align: right;
+    overflow: hidden;
+}
+#panelPlayer BUTTON {
+    border: none;
+    background-color: transparent;
+    color: #007580;
+    width: 130px;
+    height: 15px;
+    text-align: right;
+    padding: 0px 2px;
+}
+#panelPlayer BUTTON:hover {
+    cursor: pointer;
+    color: #00eaff;
+}
+#panelPlayer .playing {
+    font-weight: bold;
+    color: #00eaff;
+    width: 300px;
+    float: left;
+    overflow: hidden;
+}
+#panelPlayer .playing #playerCurrentRadio {
+    font-style: italic;
+}
+#panelPlayer #playerVolume {
+    position: relative;
+    float: left;
+    width: 171px;
+    height: 20px;
+    margin: 25px 0 5px 5px;
+    vertical-align: middle;
+    background: transparent url(../images/slider_player_volume.jpg) no-repeat top left;
+}
+#panelPlayer .sliderFull {
+    float: left;
+    margin: 6px 0px 6px 28px;
+    width: 0;
+    height: 4px;
+    background: transparent url(../images/slider_player_full.jpg) repeat-x top left;
+}
+#panelPlayer .sliderHandle {
+    position: absolute;
+    left: 28px;
+    float: left;
+    margin: 3px 0px 3px -5px;
+    width: 10px;
+    height: 10px;
+    background: transparent url(../images/slider_player_handle.png) no-repeat top left;
+}
+#panelPlayer #playerFavorites {
+    float: left;
+    width: 114px;
+    height: 27px;
+    margin: 20px 0;
+    background: transparent url(../images/btn_player_favorites.png) repeat-x top left;
+    vertical-align: middle;
+    font: bold 13px Arial, Helvetica, Sans serif;
+    color: white;
+    padding: 0px 4px 6px 32px;
+    text-align: left;
+    border: none;
+}
+#playerPlaylistList {
+    border: 2px solid #4B90EB;
+    background-color: white;
+}
+#playerPlaylistList ul.radioListing li {
+    cursor: pointer;
+}
+#playerPlaylistList ul.radioListing li:hover {
+    background-color: #EFEFEF;
+}
+#playerPlaylistList ul.radioListing li.selected {
+    background-color: #EFEFEF;
+}
+
+.visible {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+.invisible {
+    visibility: hidden;
+}
+
+.breakFloat {
+    clear: both;
+}
+
+.noSpace, noMargin {
+    margin: 0px;
+}
+
+.noPad, .noPadding {
+    padding: 0px;
+}
+
+.spacedTop {
+    margin-top: 8px;
+}
+
+.spacedBottom {
+    margin-bottom: 8px;
+}
+
+.scrollWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.spaceTop1 {
+    margin-top: 8px;
+}
+.spaceTop2 {
+    margin-top: 16px;
+}
+.spaceTop3 {
+    margin-top: 20px;
+}
+.spaceTop4 {
+    margin-top: 24px;
+}
+
+.spaceBottom1 {
+    margin-bottom: 8px;
+}
+.spaceBottom2 {
+    margin-bottom: 16px;
+}
+.spaceBottom3 {
+    margin-bottom: 20px;
+}
+.spaceBottom4 {
+    margin-bottom: 24px;
+}
+
+.spaceLeft1 {
+    margin-left: 8px;
+}
+.spaceLeft2 {
+    margin-left: 16px;
+}
+.spaceLeft3 {
+    margin-left: 20px;
+}
+.spaceLeft4 {
+    margin-left: 24px;
+}
+
+.spaceRight1 {
+    margin-right: 8px;
+}
+.spaceRight2 {
+    margin-right: 16px;
+}
+.spaceRight3 {
+    margin-right: 20px;
+}
+.spaceRight4 {
+    margin-right: 24px;
+}
+
+.space1 {
+    margin: 8px;
+}
+.space2 {
+    margin: 16px;
+}
+.space3 {
+    margin: 24px;
+}
+.space4 {
+    margin: 28px;
+}
+
+.buttonSmall {
+    height: 13px;
+    margin: 1px;
+    font: normal 10px Arial, Helvetica, Sans serif;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.bigFont {
+    font-size: 120%;
+}
+
+.flash-ok{
+    border: solid 1px #90ac13;
+    background: #eef4d3 url(../images/icon-ok.png) 8px 6px no-repeat;
+    color: #6b800d;
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+    margin: 4px 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.flash-error{
+    border: solid 1px #CC0000;
+    background: #F7CBCA url(../images/icon-error.png) 8px 6px no-repeat;
+    color: #CC0000;
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+    margin: 4px 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#panelRegister {
+    font: normal 14px Arial, Helvetica, Sans serif;
+    padding: 0px 20px;
+    margin-bottom: 2px;
+}
+
+#panelRegister .hint {
+    font: bold 11px Arial, Helvetica, Sans serif;
+    padding: 0px 20px;
+}
+
+#panelRegister HR {
+    height: 2px;
+    line-height: 4px;
+}
+BUTTON.register {
+    background: transparent url(../images/btn_yellow.jpg) no-repeat center center;
+    font: bold 16px Arial, Helvetica, Sans serif;
+    color: #ffffff;
+    width: 139px;
+    height: 40px;
+    margin-top: -2px;
+    padding: 4px 8px 12px 8px;
+    border: none;
+}
+
+button.registerLandingUsers {
+    background: transparent url(../images/streema.sprite.1.png) -9px -51px no-repeat;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #ffffff;
+    width: 99px;
+    height: 28px;
+    padding: 0px 8px 5px 8px;
+    border: none;
+}
+
+BUTTON.register:hover {
+}
+
+#content {
+    left:25px;
+    top:70px;
+    width:921px;
+}
+
+#footer {
+    margin-left:25px;
+    width:922px;
+    height:110px;
+    background-image:url(../images/fondo_footer.jpg);
+    background-repeat:repeat-x;
+}
+
+#footer.footerHomeUnregistered {
+    height: 58px;
+    background-image:url(../images/fondo_footer_home_unreg.jpg);
+    background-repeat:repeat-x;
+    text-align: center;
+    font: normal 14px Arial, Helvetica, Sans serif;
+    color: white;
+}
+#footer.footerHomeUnregistered A {
+    color: white;
+}
+#footer.footerHomeUnregistered .copyright {
+    color: white;
+    font-size: 12px;
+}
+
+#layoutBody {
+    margin: 0px 20px;
+    width: 922px;
+    text-align: center;
+    overflow: hidden;
+    clear: both;
+}
+
+#layoutBody .nostreams {
+    background-color: #ffff00;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 5px 60px;
+    width: 600px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+
+.fullW {
+    width: 100%;
+}
+.fullH {
+    height: 100%;
+}
+
+.block {
+    display: block;
+}
+.inline {
+    display: inline;
+}
+.noFloat {
+    float: none;
+}
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: right;
+}
+.floatNone {
+    float: none;
+}
+
+.floatingColumn {
+    float: left;
+    width: 240px;
+    height: 100%;
+}
+
+.floatingColumnRight {
+    float: right;
+    width: 240px;
+    height: 100%;
+}
+
+#columnLeft {
+}
+
+#columnRight {
+}
+
+#columnLeft.twoCols {
+    width: 610px;
+}
+
+#panelFavorites {
+    width: 240px;
+}
+
+#panelFacebook {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    width: 205px;
+    height: 90px;
+    margin: 0px 4px;
+    background: #556ea4;
+    color: #ffffff;
+    padding: 8px 6px 4px 6px;
+    text-align: center;
+}
+
+#panelFacebook.panelFacebookReg {
+    margin: 0px -2px 8px -2px;
+}
+
+#panelFacebook a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+BUTTON#buttonAddFacebook {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    background: transparent url(../images/btn_blue.jpg) no-repeat center center;
+    border: none;
+    width: 104px;
+    height: 24px;
+    margin-top: 2px;
+    color: #ffffff;
+}
+BUTTON#buttonAddFacebook:hover {
+}
+
+#panelFriends {
+    width: 240px;
+}
+
+#columnCenter {
+    float: left;
+    margin: 0px;
+    margin-left: 22px;
+    width: 338px;
+    height: 100%;
+}
+
+#panelMessages {
+    width: 100%;
+    background-color: white;
+}
+
+#searchFilters {
+    background: transparent url(../images/back_filters.jpg) repeat-x 0 0;
+    float: left;
+    width: 890px;
+    margin: 0px 26px 8px 0px;
+    padding: 4px 16px 3px 16px;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    overflow: hidden;
+}
+
+#searchFilters form {
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+#searchFilters * {
+    float: left;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+#searchFilters LABEL {
+    padding-top: 2px;
+}
+#searchFilters INPUT {
+    height: 15px;
+    width: 320px;
+    font: normal 13px Arial, Helvetica, Sans serif;
+    vertical-align: middle;
+}
+#searchFilters SELECT {
+    height: 21px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    width: 200px;
+    vertical-align: middle;
+}
+#searchFilters SELECT OPTION {
+    float: none;
+}
+
+#searchFilters .caption {
+    color: #000000;
+    vertical-align: middle;
+    font-size: 14px;
+}
+BUTTON.goArrow {
+    background: transparent url(../images/btn_go_arrow.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    border: none;
+    vertical-align: middle;
+}
+BUTTON.goArrow:hover {
+}
+
+#layoutBody h1 {
+    font: bold 24px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 32px;
+    margin: 8px 8px 8px 40px;
+    color: #000000;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+#layoutBody h2 {
+    background: transparent url(../images/icon_write_big.jpg) no-repeat left top;
+    font: bold 24px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 70px;
+    height:60px;
+    margin: 8px 8px 8px 40px;
+    color: #888;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+h1#searchResultsHeader {
+    background-image: url(../images/icon_listening_big.jpg);
+    font: bold 24px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 32px;
+    margin: 0px 8px 8px 40px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.userSpot {
+    font: bold 18px Arial, Helvetica, Sans serif;
+    background-image: url(../images/icon_user.jpg);
+    background-repeat: no-repeat;
+    margin: 8px 4px 8px 32px;
+    padding: 4px 4px 4px 52px;
+}
+
+#layoutBody .userSpot H2 {
+	background: none;
+    font: bold 16px Arial, Helvetica, Sans serif;
+	height: 22px;
+    margin: 0px;
+    padding: 0px;
+    color: #5289E3;
+    display: inline;
+}
+
+#layoutBody .userSpot H1 {
+    font: bold 16px Arial, Helvetica, Sans serif;
+    margin: 0px;
+    padding: 0px;
+    color: #5289E3;
+}
+
+.userSpotLegend {
+    color: #888;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+    margin: 4px 0 0 0;
+}
+
+.userSpotSection .btnPlay, .userSpotSection .btnAdd {
+    float: left;
+}
+
+.userSpotSection .friendRadio {
+    clear: both;
+    overflow: hidden;
+}
+
+div.radioSpotLeaderboard {
+    overflow: hidden;
+}
+
+div.radioSpotMiddleAd {
+    margin-top: 5px;
+}
+
+.radioSpot {
+    float: left;
+    margin: 0px 4px 0px 26px;
+    padding: 0px 4px 0px 4px;
+    overflow: hidden;
+}
+
+#frameShowInfo #showRadios{
+    margin-top: 15px;
+}
+
+#hostTopIcon{
+    margin: 0px 0px 0px 22px;
+}
+#showTopIcon{
+    margin: 0px 0px 0px 7px;
+}
+
+#hostSpotTopInfo,
+#showSpotTopInfo{
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+#hostSpotTopInfo .radioSpot .sectionHeader,
+#showSpotTopInfo .radioSpot .sectionHeader,
+#radioSpotTopInfo .radioSpot .sectionHeader{
+	padding-top: 1px;
+}
+
+#hostSpotTopInfo .radioSpot .sectionHeader h2,
+#showSpotTopInfo .radioSpot .sectionHeader h2,
+#radioSpotTopInfo .radioSpot .sectionHeader h2 {
+    color: black;
+	font: italic 14px Arial,Helvetica,Sans serif;
+	padding: 0 0 0 3px;
+}
+
+#hostSpotTopInfo .radioSpot,
+#showSpotTopInfo .radioSpot,
+#radioSpotTopInfo .radioSpot{
+	padding-top: 10px;
+}
+.radioSpot .sectionHeader {
+	overflow: hidden;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    padding: 0px;
+    margin: 0 0 0 19px;
+}
+
+#hostSpotTopInfo .radioSpot .sectionHeader h1,
+#showSpotTopInfo .radioSpot .sectionHeader h1,
+#radioSpotTopInfo .radioSpot .sectionHeader h1 {
+	float: left;
+}
+
+#showSpotTopInfo #slogan{
+    padding-top: 8px;
+}
+#radioSpotTopInfo #slogan{
+	padding-top: 12px;
+}
+
+.slogan a{
+    color: #5289E3;
+    margin-bottom: 5px;
+}
+
+#layoutBody .radioSpot h1 {
+    font-size: 22px;
+    margin: 0px 0px;
+    padding: 2px 2px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#layoutBody .radioSpot h2 {
+    background: none;
+	font: bold 18px Arial, Helvetica, Sans serif;
+    vertical-align: middle;
+    margin: 2px 0 0 0;
+    padding: 0;
+    height: auto;
+}
+
+.radioSpot h2#radioInfoSecondary {
+    display: block;
+    height: 20px;
+    font-size: 13px;
+    padding-top: 0px;
+    clear: both;
+}
+
+.radioSpot IMG {
+    float: left;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.radioSpot a img {
+    margin: 4px 20px 0px 10px;
+}
+
+#showSpotTopInfo .share,
+#radioSpotTopInfo .share {
+    color: black;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    float: left;
+    margin-right: 30px;
+}
+
+#radioSpotShareActions {
+    clear: both;
+    overflow: hidden;
+    margin: 10px 0px 5px 15px;
+}
+
+div.shareIcons {
+    float: left;
+}
+
+div.getWidget {
+    width: 160px;
+    margin: 3px 25px 0 0;
+}
+
+span.newSign {
+    color: black;
+    margin: 0 0 0 2px;
+    padding: 4px 2px;
+    font-family: Arial,Helvetica,Sans serif;
+    font-size: 11px;
+    font-weight: bold;
+    background: transparent url(../images/streema.sprite.1.png) -10.5px -96.5px no-repeat;
+}
+
+.radioSpotRegisterLine, .radioDirectoryRegisterLine {
+    margin: 10px 0px 0px 0px;
+    overflow: hidden;
+}
+
+.radioSpotNotice, .radioDirectoryNotice {
+    overflow: hidden;
+    background-color: #FFFBCE;
+    border: solid 1px #FFE321;
+    margin-left: 200px;
+    float: left;
+    padding: 3px 10px 0px 10px;
+    max-width: 630px;
+}
+
+.radioSpotNotice span, .radioDirectoryNotice span {
+    font-family: Arial, Helvetica, Sans serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 600px;
+}
+
+.radioDirectoryNotice {
+    margin-left: 80px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.radioDirectoryNotice span {
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.radioSpotNotice span.nostream {
+    display:block;
+    width: 450px;
+}
+
+#newDir {
+    margin-top: 10px;
+}
+
+#newDir.leftSection {
+    width: 950px;
+    float: left;
+}
+
+#directoryHeader {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+#newDir .radioDirectory {
+    width: 704px;
+    margin-left: 16px;
+    text-align: left;
+    font-family: Arial, Helvetica, Sans serif;
+}
+
+.radioDirectory a.name {
+    text-decoration: underline;
+}
+
+.radioDirectory div.dial {
+    width: 60px;
+    margin-right: 55px;
+}
+
+.radioDirectory div.genre {
+    font-size: 11px;
+}
+
+#newDir #featuredCities, #newDir #featuredCountries, #newDir #browseByRegion, #newDir #mainGenres{
+    margin-left: 30px;
+    margin-top: 10px;
+    text-align: left;
+    clear: both;
+    overflow: hidden;
+}
+
+#newDir #featuredCountries {
+    margin-top: 7px;
+}
+
+.browseByRegion {
+	font-family: Arial,Helvetica,Sans serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 0 15px 0;
+	text-align:left;
+}
+
+.regions {
+	margin: 0 0 0 20px;
+}
+
+.browseByRegion a{
+	color: #5289E3;
+}
+
+#newDir h2 {
+    padding: 0;
+    font-size: 14px;
+    color: #000000;
+    background: none;
+    margin: 0;
+    font-weight: bold;
+    height: 15px;
+}
+
+#newDir #geoListContainer {
+    overflow: hidden;
+    clear: both;
+}
+
+#newDir #geoListContainer ul.geoList {
+    float: left;
+    margin: 5px 40px 0 5px;
+	width: 130px;
+}
+
+#newDir div.lastGeoList {
+    margin-right: 0;
+}
+
+#geoListContainer ul.geoList, #newDir .regionList ul, #newDir .genreList ul {
+    list-style: none;
+    padding: 0;
+    font-family: Arial, Helvetica, Sans serif;
+    margin: 0;
+}
+
+#geoListContainer ul.geoList a, #newDir .regionList ul a, #newDir .genreList ul a {
+    color: #5289E3;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#newDir #featuredCities,
+#newDir #featuredCountries {
+    margin-bottom: 10px;
+}
+
+#newDir #featuredCities span.geoTitle,
+#newDir #mainGenres span.geoTitle,
+#newDir #featuredCountries span.geoTitle {
+    padding: 0;
+    font-size: 14px;
+    color: #000000;
+    background: none;
+    margin: 0;
+    font-weight: bold;
+    height: 15px;
+    font-family: Arial;
+}
+
+#newDir #browseByGenre h2 {
+    float: left;
+}
+
+#newDir .genreList li {
+    float: left;
+    margin: 0 30px 0 10px;
+}
+
+#newDir .radioDirectory .header {
+    color: #888888;
+    font: bold 14px Arial, Helvetica, Sans serif;
+    background: transparent url(../images/streema.directorybox.top.jpg) repeat-y;
+    height: 21px;
+    padding: 10px 12px 0px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+#newDir #search-header{
+    background: transparent url(../images/streema.directorybox.new.jpg) repeat-y;
+}
+
+#newDir .radioDirectory .header .orderBy {
+    font-weight: normal;
+    font-size: 13px;
+}
+#newDir .radioDirectory .header .orderBy a {
+    color: #00000F;
+}
+#newDir .radioDirectory .body {
+    background: transparent url(../images/streema.directorybox.middle.jpg) repeat-y;
+    padding: 0px 8px 0px 8px;
+    overflow: hidden;
+}
+#newDir .radioDirectory .body a {
+    color: #5289E3;
+}
+#newDir .radioDirectory .footer {
+    background: transparent url(../images/streema.directorybox.middle.jpg) repeat-y;
+    height: 24px;
+}
+#newDir .radioDirectory .footer .pager {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: #444444;
+    background: transparent url(../images/streema.directorybox.middle.jpg) repeat-y;
+    height: 11px;
+    padding: 2px 12px;
+}
+#newDir .radioDirectory .footer .bottom {
+    background: transparent url(../images/streema.directorybox.bottom.jpg) repeat-y;
+    height: 10px;
+}
+#newDir .radioDirectory .noresults {
+    text-align: center;
+}
+#newDir .radioDirectory .radiosListing {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#newDir .radioDirectory .radioEntry.odd {
+    background-color: #EFEFEF;
+}
+#newDir .radioEntry .leftCol {
+    float: left;
+    width: 445px;
+    padding-bottom: 5px;
+    border-right: 2px dotted #cccccc;
+    height: 40px;
+}
+#newDir .radioEntry .rightCol {
+    float: right;
+    width: 240px;
+    padding-bottom: 5px;
+    height: 40px;
+}
+#newDir .radioEntry .line1, #newDir .radioEntry .line2 {
+    padding: 4px 0 4px 8px;
+}
+#newDir .radioEntry .leftCol .line1 {
+    font-size: 13px;
+}
+#newDir .radioEntry .leftCol .line2 {
+    padding-left: 0;
+}
+#newDir .radioEntry .leftCol .line2.nosong {
+    padding-left: 63px;
+}
+#newDir .radioEntry .leftCol .line2 .songinfo {
+    float: left;
+    padding: 0 24px;
+    width: 14px;
+    height: 14px;
+}
+#newDir .radioEntry .buttons {
+    float: left;
+    width: 54px;
+}
+
+#newDir .radioEntry .btnAdd {
+    margin: 0 4px;
+    float: left;
+}
+#newDir .radioEntry .btnPlay, #newDir .radioEntry .btnPlayDisabled {
+    margin: 0 12px 0 4px;
+    float: left;
+}
+
+a.playButtonSmall {
+    background: transparent url(../images/streema.sprite.1.png) -75px -485px no-repeat;
+    display: block;
+    text-indent: -9999px;
+    height: 13px;
+    width: 10px;
+}
+
+a.playButtonBig {
+    background: transparent url(../images/streema.sprite.1.png) -10px -485px no-repeat;
+    height: 51px;
+    width: 51px;
+    display: block;
+    text-indent: -9999px;
+    float: left;
+}
+
+#newDir .radioEntry .name {
+    color: #5289E3;
+    font-weight: bold;
+} 
+#newDir .radioEntry .popularity {
+    font-size: 11px;
+}
+#newDir .radioEntry .dial, #newDir .radioEntry .popularity {
+    float: left;
+}
+#newDir .radioEntry .location {
+    float: left;
+    margin-left: 20px;
+}
+#newDir .radioEntry .bitrate {
+    float: right;
+    margin-right: 4px;
+    font-size: 11px;
+}
+
+#skyscraperRightCol {
+    float: left;
+}
+
+.directorySkyscraper {
+    width: 185px;
+    padding: 0 10px 0 15px;
+    text-align: left;
+    font-family: Arial, Helvetica, Sans serif;
+}
+
+#secondDirectorySkyscraper {
+    margin-top: 200px;
+}
+
+.radioDirectory {
+    float: left;
+    width: 910px;
+}
+
+.radioDirectory .header {
+    color: #3b5b96;
+    font: bold 14px Arial, Helvetica, Sans serif;
+    background: transparent url(../images/th_radio_directory2a.jpg) repeat-y;
+    height: 23px;
+    padding: 8px 12px 0px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+.radioDirectory .body {
+    background: transparent url(../images/tb_radio_directory2.jpg) repeat-y;
+    padding: 0px 6px 0px 6px;
+}
+.radioDirectory .footer {
+    background: transparent url(../images/tb_radio_directory2.jpg) repeat-y;
+    height: 24px;
+}
+.radioDirectory .footer .pager {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: #444444;
+    background: transparent url(../images/tb_radio_directory2.jpg) repeat-y;
+    height: 11px;
+    padding: 2px 12px;
+}
+.radioDirectory .footer A {
+    margin-left: 8px;
+}
+.radioDirectory .footer .bottom {
+    background: transparent url(../images/tf_radio_directory2.jpg) repeat-y;
+    height: 10px;
+}
+.radioDirectory TABLE {
+    width: 897px;
+}
+.radioDirectory THEAD {
+}
+.radioDirectory THEAD TR {
+    background-color: #eeeeee;
+    height: 17px;
+}
+.radioDirectory TR.columnHeaders TH {
+    background: none;
+    color: #666666;
+}
+.radioDirectory TBODY {
+    overflow: hidden;
+}
+.radioDirectory TBODY TR {
+    height: 20px;
+    overflow: hidden;
+}
+.radioDirectory TBODY TD {
+    background: none;
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: #4a4a4a;
+    padding-top: 2px;
+    padding-left: 6px;
+    height: 20px;
+}
+.radioDirectory TH.radioStation {
+    text-align: left;
+}
+.radioDirectory TD.radioStation {
+    font-weight: bold;
+    color: #5289e3;
+    text-align: left;
+}
+.radioNameAtDirectory {
+    font-weight: bold;
+    color: #5289e3;
+    text-align: left;
+}
+
+div.directoryLeaderboard {
+    clear: both;
+}
+
+.radioDirectory TABLE TD.rating IMG {
+    margin-right: -3px;
+    cursor: pointer;
+}
+.radioDirectory .header INPUT {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: black;
+    width: 240px;
+    height: 13px;
+    margin: 0px 4px;
+}
+.radioDirectory #requestRadio2 {
+    font: bold 14px Arial, Helvetica, Sans serif;
+    color: #666666;
+    padding: 2px;
+    border: none;
+}
+.radioDirectory TR.tableHeader A {
+    text-decoration: none;
+    margin-right: 2px;
+}
+.radioDirectory TR.tableHeader .offsiteButtons {
+    margin: 3px 2px 1px 2px;
+}
+
+.radioName {
+    font-size: 14;
+	color: black;
+}
+
+#frameShowInfo #moreRadios{
+    text-align: right;
+}
+
+#frameShowInfo #radiosList li{
+    padding: 0px;
+    background: none;
+    list-style: none;
+    display: block;
+    text-align: left;   
+}
+.radioPageLink {
+    color: #5389E3;
+}
+.MacIncompatibleRadioName {
+}
+.radioSource {
+}
+
+.incompatibleWarning {
+    font-family:Arial, Helvetica, sans-serif;
+    color:#AAAAAA;
+    font-size:11px;
+}
+
+.caption, .caption1 {
+    color: #888;
+    font: bold 12px Arial, Helvetica, Sans serif;
+}
+
+.headerCaption {
+    margin: 4px 0px 0px 42px;
+    color: #888;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+    overflow: hidden;
+    padding-bottom: 4px;
+}
+
+.headerCaption .share {
+    float: left;
+    margin-right: 20px;
+}
+
+.resultsCount {
+	text-align: left;
+    color: #888;
+    font: bold 13px Arial, Helvetica, Sans serif;
+    margin-left: 8px;
+}
+
+H2#resultsCountHeader {
+ 	background: none;
+	text-align: left;
+    color: #888;
+    font: bold 13px Arial, Helvetica, Sans serif;
+    margin: 0;
+	padding: 0;
+	height: 18px;
+}
+
+.directoryDetailText {
+    clear: both;
+    width: 696px;
+    margin: 0 0 0 22px;
+}
+
+.directoryDetailText p {
+    font-family: Arial, Helvetica, sans serif;
+    text-align: left;
+}
+
+.commonFooter {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #444444;
+    padding: 26px 42px 0 26px;
+}
+.commonFooter .column {
+    float: left;
+    margin: 0px 43px 8px 0px;
+}
+.commonFooter .blogColumn {
+    float: left;
+    margin: 0px 14px 8px 0px;
+    width: 140px;
+}
+.commonFooter .lastColumn {
+    float: left;
+    margin: 0px 0px 8px 0px;
+}
+.commonFooter .title {
+    font-weight: bold;
+    margin: 4px 0px;
+    height: 16px;
+}
+
+.commonFooter #footer-require{
+    font-size: 12px;
+}
+.commonFooter #footer-copyright{
+    font-size: 11px;
+}
+.commonFooter #simplefooter{
+    margin: 4px 0 0 0;
+    font-size: 13px;
+}
+.commonFooter #simplefooter a{
+    text-decoration: none;
+}
+.commonFooter #simplefooter a:hover{
+    text-decoration: underline;
+}
+
+.commonFooter A {
+    color: #444444;
+    text-decoration: underline;
+}
+
+.gray, .grey {
+    color: gray;
+}
+
+.black {
+    color: black;
+}
+
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.lh150 {
+    line-height: 150%;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.pad2 {
+    padding: 2px;
+}
+.pad4 {
+    padding: 4px;
+}
+.pad8 {
+    padding: 8px;
+}
+.pad12 {
+    padding: 12px;
+}
+.pad16 {
+    padding: 16px;
+}
+
+.sans {
+    font-family: Arial, Helvetica, Sans serif;
+}
+
+.serif {
+    font-family: Georgia, Times, Serif;
+}
+
+
+.scrollAuto {
+    overflow: auto;
+}
+
+.shareLink {
+    font-family: Arial,Helvetica,Sans serif;
+    font-weight: bold;
+    font-size: 12px;
+    float: left;
+    margin: 3px 30px 0 0px;
+    color: #888888;
+}
+
+.shareLink a {
+    color: #5289E3;
+}
+
+#newDir BUTTON#requestRadioBtn {
+    background: transparent url(../images/btn_request_radio.jpg) no-repeat center center;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    width: 133px;
+    height: 27px;
+    padding: 2px 4px;
+    border: none;
+    float: left;
+}
+
+BUTTON#requestRadioBtn:hover {
+}
+
+INPUT#radioUrl {
+    font: normal 10px Arial, Helvetica, Sans serif;
+    color: #000000;
+    width:210px;
+}
+
+#recentListeners {
+    float: right;
+    width: 252px;
+    height: 280px;
+    background-color: white;
+}
+
+.radioDisclaimer {
+    margin: 0px 12px 4px 26px;
+    width: 880px;
+}
+
+UL.radioListing {
+    text-align: left;
+    padding: 2px 2px;
+    margin: 0px;
+}
+UL.radioListing LI {
+    font: normal 10px Tahoma, Helvetica, Sans serif;
+    line-height: 200%;
+    list-style: none outside none;
+}
+OL.radioListing {
+    text-align: left;
+    padding: 2px 0px;
+    margin: 0px 0px 2px 28px;
+}
+OL.radioListing LI {
+    font: normal 10px Tahoma, Helvetica, Sans serif;
+    list-style: decimal outside none;
+    line-height: 150%;
+    margin-top: 4px;
+}
+
+.radioListing LI.socialNet {
+    overflow: hidden;
+    line-height: 150%;
+    margin-top: 4px;
+}
+
+.radioListing LI.socialNet div.username a {
+    color: black;
+    margin-right: 4px;
+}
+
+.radioListing li.socialNet div.avatar {
+    background: transparent url('../images/streema.sprite.1.png') -107px -485px no-repeat;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+}
+
+#frameFriends ul.radioListing li.editing {
+    color: black;
+}
+
+#frameFriends div.noFriends {
+    padding: 130px 20px 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#frameFriends div.notifications {
+    font: normal 10px Tahoma, Helvetica, Sans serif;
+    list-style: decimal outside none;
+    line-height: 150%;
+    text-align: left;
+}
+#frameFriends div.notifications.userAuthNotif {
+    margin-bottom: 6px;
+}
+#frameFriends div.notifications.userReqNotif {
+    margin-top: 55px;
+}
+
+#frameFriends div.notifications ul {
+    margin: 4px 0 0 4px;
+    padding: 0;
+    list-style: none;
+}
+#frameFriends div.notifications ul li a {
+    color: black;
+}
+#frameFriends div.notifications ul li a.username {
+    vertical-align: top;
+}
+#frameFriends div.notifications ul li a img {
+    width: 14px;
+}
+    
+
+#frameFavorites ul.radioListing li {
+    padding-left: 6px;
+}
+
+#frameFavorites ul.radioListing li.noedit {
+    cursor: pointer;
+}
+
+#frameFavorites ul.radioListing li.editing {
+    cursor: default;
+    background-color: #FFFFFF;
+}
+
+#frameFavorites ul.radioListing li.noedit.selected {
+    background-color: #EFEFEF;
+}
+
+#frameFavorites ul.radioListing li.noedit:hover {
+    background-color: #EFEFEF;
+}
+
+UL.friendsListing {
+    text-align: left;
+    padding: 4px 8px;
+    margin: 0px;
+}
+UL.friendsListing LI {
+    font: normal 10px Tahoma, Helvetica, Sans serif;
+    line-height: 200%;
+    list-style: none outside none;
+}
+
+UL.postListing {
+    text-align: left;
+    padding: 4px 4px;
+    margin: 0px;
+}
+UL.postListing LI {
+    overflow: auto;
+    font: normal 11px Tahoma, Helvetica, Sans serif;
+    line-height: 150%;
+    list-style: none outside none;
+    margin: 4px 0px;
+    color: #444444;
+    border-bottom: 1px solid silver;
+}
+
+.feedListing {
+    text-align: left;
+    padding: 4px 8px 4px 16px;
+    margin: 0px;
+}
+.feedListing LI {
+    font: normal 11px Tahoma, Helvetica, Sans serif;
+    line-height: 150%;
+    list-style: none outside none;
+    margin: 4px 0px 4px 16px;
+    color: #666666;
+}
+.feedListing LI.feedAdd {
+    list-style-image: url(../images/icon_add.jpg);
+}
+.feedListing LI.feedListening {
+    list-style-image: url(../images/icon_listening.jpg);
+}
+.feedListing LI.feedRadio {
+    list-style-image: url(../images/icon_radio.jpg);
+}
+
+UL.tagListing {
+    text-align: left;
+    padding: 4px 16px;
+    margin: 0px;
+}
+UL.tagListing LI {
+    font: bold 16px Tahoma, Helvetica, Sans serif;
+    line-height: 150%;
+    list-style: none outside none;
+    margin: 8px 8px 8px 0px;
+    color: #888888;
+    display: inline;
+}
+UL.tagListing LI .t1 {
+    font-size: 14px;
+}
+UL.tagListing LI .t2 {
+    font-size: 18px;
+}
+UL.tagListing LI .t3 {
+    font-size: 24px;
+}
+
+a.btnAddFriend img {
+    vertical-align: top;
+    width: 12px;
+}
+
+.buttonPlay {
+    width: 10px;
+    height: 13px;
+    cursor: pointer;
+    font: normal 10px Arial, Helvetica, Sans serif;
+    vertical-align: middle;
+}
+
+.buttonAdd {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    font: normal 10px Arial, Helvetica, Sans serif;
+    vertical-align: middle;
+}
+
+
+.radioListing .avatar {
+    width: 20px;
+    height: 20px;
+    margin: 1px 2px;
+    padding: 1px;
+}
+
+.socialNetIcon {
+    width: 13px;
+    height: 13px;
+    margin: 1px 2px;
+    padding: 1px;
+}
+
+.error {
+    color: red;
+    font-family: Arial, Helvetica, Sans serif;
+}
+
+#usersHomeContainer {
+    margin-top: 10px;
+}
+
+#panelHome {
+    margin: 16px 0px 8px 47px;
+}
+
+#panelHome .picture {
+    width: 608px;
+    height: 206px;
+    margin: 0px 0px 0px 90px;
+    background: white url(../images/stop_living_radioless.jpg) no-repeat center center;
+}
+#panelHome .caption {
+    position: relative;
+    left: 302px;
+    top: 115px;
+    text-align: left;
+}
+#panelHome .panelSearch {
+    padding: 0px 10px 20px 0px;
+    text-align: left;
+    float: left;
+}
+#panelHome .panelSearch .hint {
+    clear: left;
+    color: #4285d6;
+    font: normal 16px Arial, Helvetica, Sans serif;
+    margin: 0px 2px 0px 2px;
+}
+#panelHome #landingFbLike {
+    overflow: hidden;
+    margin-top: 8px;
+}
+#usersHomeContainer #landingFbLike{
+    margin-left: 5px;
+    width: 340px;
+    overflow: hidden;
+}
+#loggedHomeTwitter{
+    margin-left:5px;
+    text-align:left;
+}
+
+#unregisteredHomeDescription {
+    background: #E2E2E2;
+    font-family: Arial, Helvetica, sans-serif;
+	margin-left: 25px;
+	padding: 0px 19px 0px 19px;
+	width: 884px;
+}
+
+#unregisteredHomeDescription h2 {
+    clear: both;
+    color: #656565;
+    font-weight: bold;
+    font-size: 12px;
+	padding-top: 18px;
+	margin-top: 0px;
+}
+
+#unregisteredHomeDescription p {
+    color: #7e7e7e;
+    margin-bottom: 0px;
+}
+
+#unregisteredHomeDescription .radioList {
+    float: left;
+    margin: 0 3% 0 0;
+}
+
+#unregisteredHomeDescription .radioList ul {
+    list-style: none;
+    padding: 0;
+}
+
+span#searchBarExamples {
+    margin: 2px 0px 0px 20px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#panelHome .panelSearch form {
+    overflow: hidden;
+}
+
+#panelHome .panelSearch INPUT {
+    width: 385px;
+    height: 30px;
+    float: left;
+    margin: 0px;
+    padding: 4px 4px;
+    color: black;
+    font: italic 20px Arial, Helvetica, Sans serif;
+    border: 1px solid black;
+    border-right: none;
+}
+#panelHome #buttonLetsDoIt {
+    background: transparent url(../images/search.button.jpg) no-repeat center center;
+    width: 100px;
+    height: 40px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    border: none;
+}
+
+#panelHome .panelSearch .hint {
+    margin-top: 10px;
+}
+
+#panelHome .panelPick {
+    text-align: left;
+}
+#panelHome .panelPick .hint {
+    clear: left;
+    margin: 0px 2px 0px 2px;
+    width: 390px;
+    float: left;
+}
+
+#panelHome .panelPick .pickGenres {
+    margin: 15px 0 20px 23px;
+    clear: both;
+}
+
+#panelHome .panelPick.bottom {
+    text-align: right;
+    float: right;
+    margin-right: 40px;
+}
+
+#panelHome .panelPick LABEL {
+    font: bold 18px Arial, Helvetica, Sans serif;
+    color: black;
+}
+#panelHome .panelPick .genreListing {
+    display: inline;
+    margin: 8px 0 0 0;
+    padding: 0px;
+}
+#panelHome .panelPick .genreListing LI {
+    display: inline;
+    margin-left: 16px;
+    font: bold 18px Arial, Helvetica, Sans serif;
+    color: #284885;
+}
+#panelHome .panelPick .genreListing LI A {
+    color: #284885;
+    text-decoration: underline;
+}
+
+#panelHome .panelPick .genreListing LI A.selected {
+    color: black;
+    text-decoration: none;
+}
+
+#panelHome .panelPick .pickRadios {
+    margin-left: 34px;
+    margin-top: 16px;
+    overflow: hidden;
+    position: relative;
+    width: 762px;
+    height: 90px;
+}
+
+#panelHome .panelPick .pickRadios .radioListing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 7620px;
+    position: absolute;
+}
+
+#panelHome .panelPick .pickRadios .radioListing li {
+    width: 762px;
+    display: block;
+    float: left;
+}
+
+#panelHome .panelPick .radioListing .item {
+    float: left;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: black;
+    width: 254px;
+}
+#panelHome .panelPick .radioListing .item A {
+    font: bold 18px Arial, Helvetica, Sans serif;
+    color: #284885;
+}
+#panelHome .panelPick .radioListing .item IMG {
+    float: left;
+}
+#panelHome .panelPick .radioListing .item .radioDescription {
+    float: left;
+    text-align: left;
+    margin-top: 4px;
+    margin-left: 6px;
+    line-height: 150%;
+}
+#panelHome .panelPick #moreRadios {
+    clear: left;
+    color: #4285d6;
+    font: bold 20px Arial, Helvetica, Sans serif;
+    margin: 0px 2px 0px 2px;
+    text-decoration: underline;
+}
+
+#panelHome #landingBottomContainer {
+    width: 840px;
+    height: 310px;
+}
+
+#panelHome #landingBottomContainer .thead {
+    background:  transparent url('../images/recentlisteners.bkg.top.png') no-repeat;
+    height: 4px;
+}
+
+#panelHome #landingBottomContainer .tbody {
+    background:  transparent url('../images/recentlisteners.bkg.middle.png') repeat-y;
+    padding: 10px 0 10px 20px;
+    overflow: hidden;
+}
+
+#panelHome #landingBottomContainer .tfoot {
+    background:  transparent url('../images/recentlisteners.bkg.bottom.png') no-repeat;
+    height: 4px;
+}
+
+#panelHome #landingRecentListeners {
+    float: left;
+    width: 485px;
+}
+
+#panelHome #landingH1 {
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+#panelHome .landingTitle {
+    font: normal normal bold 24px/normal Arial, Helvetica, 'Sans serif';
+    text-align: left;
+}
+
+#panelHome #landingRecentListeners ul {
+    list-style: none;
+    font: 14px Arial, Helvetica, Sans serif;
+    padding: 0 0 0 7px;
+    text-align: left;
+}
+
+#panelHome #landingRecentListeners ul li {
+    margin-bottom: 12px;
+}
+
+#panelHome #landingRecentListeners ul li a {
+    color: #284885;
+}
+
+#panelHome #landingRecentListeners ul li .timestamp {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+#panelHome #landingTwitterWidget {
+    float: left;
+}
+
+BUTTON#addUserAsFriend {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    background: transparent url(../images/btn_add_gray_transp.gif) no-repeat right center;
+    padding-right: 13px;
+    display: inline;
+}
+BUTTON#addUserAsFriend:hover {
+}
+
+
+.form {
+}
+.form .error {
+    margin-left: 130px; 
+    text-align: left;
+    font-size: 11px;
+}
+
+#requestForm .form .error{
+	margin-top: 6px;
+}
+#requestForm #radioLogo .error{
+	margin-top: 15px;
+}
+
+.form .registering {
+    text-align: left;
+    font: normal 13px Arial, Helvetica, sans-serif;
+    
+}
+.form .line{
+    border-top: 1px solid #CCCCCC; 
+    width: 320px; 
+    padding-top: 3px;
+    position:absolute;
+    left: 220px;
+    
+}
+
+
+
+.form .entry {
+    clear: both;
+	overflow: hidden;
+}
+.form .label, .form LABEL {
+    float: left;
+    width: 160px;
+    margin: 4px 8px 0px 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: right;
+}
+.form .control {
+    float: left;
+    margin: 0px;
+}
+
+.form .example {
+    float: right;
+    margin: 5px 0px 7px 0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:10px;
+}
+.control select{
+	margin: 0px 0px 4px 0px;
+}
+.control ul{
+	padding: 0;
+}
+.control li{
+	list-style-type: none;
+}
+
+.additional-text-style{
+	display: block;
+	width: 430px;
+	text-align: left;
+	margin: 0px 0px 10px 104px;
+	color: #888888;
+	overflow: auto;
+	padding-top: 10px;
+	height: 33px;
+}
+#requestRadio #header h1{
+	margin-left: 15px;
+	padding-top: 15px;
+}
+
+.request-form{
+	float: left;
+	overflow: hidden;
+	width: 536px;
+}
+
+.hidden-div{
+	display:none;
+	overflow: hidden;
+}
+.field{
+	float: left;
+}
+
+#radioLogo label{
+	margin-top: 14px;
+}
+
+#radioLogo input{
+	margin: 10px 0px 10px 0px;
+}
+
+.explain-texts-style{
+	float: right;
+	width: 340px;
+	color:#666666;
+	display:block;
+	font:12px Arial,Helvetica,Sans serif;
+	text-align:left;
+	margin: 5px 0px 0px 0px;
+	padding: 0px 55px 0px 0px;
+}
+#explainTextGenres{
+	margin-top: 30px;
+}
+
+#radioLogo .explain-texts-style{
+	margin-top: 15px;
+}
+
+#continueButton{
+	display: block;
+	margin-top: 10px;
+}
+.stream-style-hide{
+	display: none;
+	overflow: hidden;
+}
+.stream-style-show{
+	margin-top: 50px;
+}
+.more-streams-style a{
+	display: block;
+	margin: 20px 0px 20px 0px;
+	font:12px Arial,Helvetica,Sans serif;
+	text-decoration: underline;
+	color: #4285D6;
+	text-align: left;
+	padding-left: 122px;
+	max-width: 270px;
+}
+
+#requestForm #genreError{
+	margin-top: 0px;
+	padding: 23px 0px 0px 54px;
+}
+
+#explainTextGenres{
+	margin: 0px;
+}
+
+.continue-style{
+	color:#666666;
+	display:block;
+	font:12px Arial,Helvetica,Sans serif;
+	margin-bottom:10px;
+	text-align:left;
+	padding: 0px 15px 0px 35px;
+}
+.plus-style{
+	display: block;
+	margin: 20px 0px 20px 177px;
+	font:14px Arial,Helvetica,Sans serif;
+	text-decoration: underline;
+	color: #888888;
+	text-align: left;
+	font-weight: bold;
+	width: 270px;
+}
+.plus-style a{
+	color: #4285D6;
+	text-decoration: underline;
+	width: 100%;
+}
+
+#additionalInformation{
+	display: none;
+}
+
+.add-stream{
+	display:inline;
+}
+#label_genres{
+	margin: 30px 8px 0px 8px;
+}
+.checkbox{
+	display:inline;
+}
+.checkbox ul{
+	margin: 0px;
+}
+.checkbox li{
+	display: inline;
+}
+.checkbox label{
+	display: inline-block;
+	max-width: 50px;
+}
+
+.checkbox input{
+	margin: 3px 3px 11px 4px;
+}
+
+.bcast-type{
+	display:inline;
+   	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.genres-choices{
+	display:inline;
+}
+
+.form .comment {
+    float: left;
+    margin: 5px 0px 2px 0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:10px;
+}
+
+.form p.infoText {
+    clear: both;
+    font-family: Arial,Helvetica,Sans serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #888888;
+    border-bottom: 1px solid #888888;
+    margin: 20px 0 20px 70px;
+    width: 400px;
+}
+
+
+
+.form .hint {
+    float: left;
+    height: 15px;
+    margin-left: 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    text-align: left;
+}
+.form .fixedData {
+    font: bold italic 12px Arial, Helvetica, Sans serif;
+    color: black;
+    padding: 4px 0px 6px 0px;
+}
+.form INPUT.text {
+    width: 200px;
+    height: 17px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    margin-bottom: 4px;
+}
+.form SELECT.text {
+    width: 200px;
+    height: 17px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    margin-bottom: 4px;
+}
+.form TEXTAREA {
+    width: 320px;
+    height: 120px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    padding: 1px 2px;
+}
+.form BUTTON#submitRadio {
+    width: 100px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    margin-left: 402px;
+}
+.form BUTTON#submitRegistration {
+    width: 100px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    margin-left: 0px;
+}
+.form BUTTON#submitRadio:hover {
+}
+
+
+.form2 {
+}
+.form2 .entry {
+    clear: both;
+}
+.form2 LABEL {
+    float: left;
+    width: 50px;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #869ccf;
+    text-align: left;
+    margin: 8px 8px 0px 8px;
+}
+.form2 .control {
+    float: left;
+    margin: 2px 0px;
+}
+.form2 TEXTAREA {
+    width: 316px;
+    height: 120px;
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: #666666;
+    margin: 4px 8px 0px 8px;
+    padding: 1px 2px;
+}
+.form2 SELECT {
+    width: 200px;
+    height: 21px;
+    padding: 1px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    margin: 4px 8px 0px 8px;
+}
+.form2 BUTTON {
+    /*float: right;*/
+    width: 100px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+}
+
+
+.form3 {
+}
+.form3 .error {
+    float: right;
+    width: 190px;
+    margin-right: 8px;
+    text-align: left;
+    font-size: 11px;
+}
+.form3 .entry {
+    clear: both;
+    margin: 0px 8px;
+}
+.form3 LABEL {
+    width: auto;
+    float: right;
+    font: bold 11px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: right;
+    margin: 8px 4px 0px 4px;
+    padding-top: 2px;
+}
+.form3 .control {
+    float: right;
+    margin: 2px 0px 2px 0px;
+}
+.form3 INPUT {
+    width: 190px;
+    height: 17px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    vertical-align: middle;
+    margin: 4px 4px 0px 4px;
+}
+.form3 TEXTAREA {
+    width: 187px;
+    height: 88px;
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: #666666;
+    margin: 4px 4px 0px 4px;
+    padding-top: 1px;
+}
+
+#formMessages .formHead {
+    margin: 0px 16px;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #869ccf;
+    padding: 2px 0px;
+}
+#formMessages .formHead .link {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #869ccf;
+    padding: 2px 8px;
+}
+#formMessages .formHead A {
+    color: #869ccf;
+}
+#formMessages .formHead .selected, #formMessages .formHead .selected A {
+    color: #556ea4;
+}
+
+#formMessages div.tabs {
+    margin-top: 30px;
+    font-size: 11px;
+}
+
+#formMessages ul.messages {
+    padding: 0;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:10px;
+}
+
+#formMessages ul.messages li {
+    list-style: none;
+    padding: 3px 3px 3px 3px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#formMessages ul.messages li.even {
+    background-color: #EFEFEF;
+}
+
+#formMessages ul.messages li p.body {
+    text-align: left;
+    padding: 4px;
+    font-size: 11px;
+}
+
+#formMessages ul.messages li div.date {
+}
+
+#formMessages ul.messages li p.body a {
+    color: #556EA4;
+}
+
+
+
+#formInvite .form {
+    height: 330px;
+    overflow: auto;
+    padding-top: 10px;
+}
+#formInvite .formHead {
+    margin: 0px 32px;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    padding-top: 8px;
+    text-align: right;
+}
+#formInvite .formHead .link {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #869ccf;
+    padding: 2px 8px;
+}
+#formInvite .formHead A {
+    color: #869ccf;
+}
+#formInvite .formHead .selected, #formInvite .formHead .selected A {
+    color: #556ea4;
+}
+#formInvite .formFoot {
+    color: black;
+    font: bold 11px Arial, Helvetica, Sans serif;
+    margin: 4px 24px 4px 48px;
+}
+#formInvite .formFoot A {
+    color: black;
+    text-decoration: underline;
+}
+
+#formInvite .formFoot .submit {
+    clear: both;
+    text-align: right;
+}
+
+#formInvite .formFoot button {
+    margin-top: 10px;
+    font-size: 12px;
+    width: 100px;
+}
+
+#formInvite .formLegend {
+    color: #888888;
+    font: bold 11px Arial, Helvetica, Sans serif;
+    text-align: left;
+    margin: 0px 8px;
+}
+
+#formNewsfeeds p.welcome {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+}
+
+#formNewsfeeds p.welcome img {
+    vertical-align: middle;
+}
+
+
+#formNewsfeeds p.welcome a {
+    color: #556EA4;
+}
+
+#formNewsfeeds p.welcome a {
+    color: #556EA4;
+}
+#requestRadio {
+}
+#requestRadio .error {
+    float: left;
+    margin: 2px 8px;
+    font-size: 12px;
+    text-align: left;
+}
+#requestRadio H1, #requestRadio .htit {
+    background: transparent url(../images/icon_radio_big.jpg) no-repeat left top;
+    font: bold 24px Arial, Helvetica, Sans serif;
+    margin: 8px 8px;
+    padding-top: 6px;
+    padding-left: 56px;
+    height: 40px;
+    clear: right;
+}
+#requestRadio .caption {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    float: left;
+    margin: -18px 8px;
+    padding-left: 56px;
+}
+
+
+#addFriendDlg .winTitle {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+}
+#addFriendDlg form {
+    margin-top: 20px;
+}
+#addFriendDlg div.search {
+    padding-left: 50px;
+}
+#addFriendDlg #friendSearchField {
+    width: 180px;
+    vertical-align: middle;
+}
+#addFriendDlg form button {
+    padding: 1px 6px;
+    vertical-align: middle;
+}
+#addFriendDlg form div.choices {
+    margin-top: 5px;
+    margin-left: 50px;  
+}
+#addFriendDlg form div.choices label, #addFriendDlg form div.choices input {
+    vertical-align: middle; 
+}
+#addFriendDlg form div.choices #searchType_username {
+    margin-right: 30px;
+}
+
+#contactUs {
+    font: 14px Arial, Helvetica, Sans serif;
+    color: black;
+}
+
+#contactUs .error {
+    clear: both;
+    margin: -2px 0px 4px 176px;
+}
+
+#contactUs H1, #contactUs .htit {
+    background: transparent url(../images/icon_mail_big.jpg) no-repeat left top;
+    font: bold 24px Arial, Helvetica, Sans serif;
+    margin: 8px 8px;
+    padding-top: 6px;
+    padding-left: 72px;
+    height: 40px;
+    clear: right;
+}
+
+#contactUsListContainer {
+    margin-left: 40px;
+    text-align: left;
+    width: 859px;
+}
+
+#contactUs .thead {
+    background: transparent url(../images/contactus.box.top.jpg) no-repeat;
+    height: 16px;
+    width: 859px;
+}
+
+#contactUs .tbody {
+    background: transparent url(../images/contactus.box.mid.jpg) repeat-y;
+    padding: 10px 25px 10px 25px;
+}
+
+#contactUs .tfooter {
+    background: transparent url(../images/contactus.box.bot.jpg) no-repeat;
+    height: 16px;
+    width: 859px;
+}
+
+#contactUs a {
+    text-decoration: underline;
+    color: black;
+}
+
+ul.commentList {
+    list-style: none;
+    padding: 0 0 0 20px;
+}
+
+ul.commentList li {
+    margin-bottom: 10px;
+    padding-left: 35px;
+}
+
+#mobileItem {
+    background: transparent url(../images/contactus.mobile.png) no-repeat;
+}
+
+#radioRequestItem {
+    background: transparent url(../images/contactus.radio.directory.png) no-repeat;
+}
+
+#radioContactItem {
+    background: transparent url(../images/contactus.radio.png) no-repeat;
+}
+
+#technicalItem {
+    background: transparent url(../images/contactus.faqs.png) no-repeat;
+}
+
+#contactItem {
+    background: transparent url(../images/contactus.mail.png) no-repeat;
+}
+
+#contactUsForm {
+    display: none;
+}
+
+#contactUsForm .formCaption {
+    width: 180px;
+    margin-left: 75px;
+}
+
+#contactUsForm .captcha {
+    padding: 5px 0 0 180px;
+}
+
+#community {
+}
+#community H1, #community .htit {
+    background: transparent url(../images/icon_comunity_big.jpg) no-repeat left top;
+    font: bold 24px Arial, Helvetica, Sans serif;
+    margin: 8px 8px;
+    padding-top: 6px;
+    padding-left: 80px;
+    height: 40px;
+    clear: right;
+}
+#community .caption {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    float: left;
+    margin: -18px 8px;
+    padding-left: 80px;
+}
+
+#registration {
+}
+#registration A{
+    color: #86aada;
+    
+}
+
+#registration .error {
+    clear: both;
+    margin: -2px 2px 4px 176px;
+}
+#registration H1, #registration .htit {
+    background: transparent url(../images/icon_write_big.jpg) no-repeat left top;
+    font: bold 24px Arial, Helvetica, Sans serif;
+    margin: 8px 8px;
+    padding-top: 6px;
+    padding-left: 72px;
+    height: 60px;
+    clear: right;
+}
+#registration .caption {
+    float: left;
+    margin: -38px 8px;
+    padding-left: 74px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: left;
+}
+#registration .caption .inviter {
+}
+
+#registration .checkbox {
+    width: 15px;
+    margin: 2px 0px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+#registration .submitLeft {
+ text-align: left;
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:11px;
+ width: 430px;
+ }
+#registration .controlCaptcha {
+    width: 310px;
+    height: 160px;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    text-align: center;
+}
+#registration .controlCaptcha {
+    width: 310px;
+    height: 160px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-align: center;
+}
+#registration .controlCaptcha A {
+    color: blue;
+}
+#registration .controlCaptcha .captcha {
+    width: 310px;
+    height: 125px;
+    margin-top: 4px;
+    background-color: silver;
+}
+#registration .controlPolicy {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: left;
+}
+
+#registration.facebook p.infoText {
+    clear: both;
+    font-family: Arial,Helvetica,Sans serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #888888;
+    border-bottom: 1px solid #888888;
+    margin: 20px 0 20px 70px;
+    width: 400px;
+}
+
+
+
+#faq {
+    padding: 16px 16px 16px 26px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+}
+#faq H1 {
+    font: bold 24px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 0px;
+    margin: 0px 0px 8px 0px;
+}
+#faq H2, #faq H2 A {
+    margin: 26px 0px 8px 0px;
+    color: #3b5b96;
+    font: bold 14px Arial, Helvetica, Sans serif;
+}
+
+
+#faq H3, #faq H3 A{
+    margin: 26px 0px 8px -13px;
+    color: #3b5b96;
+    font: bold 14px Arial, Helvetica, Sans serif;
+
+    text-align: left;
+    padding-left: 0px;
+}
+
+#faq A{
+    color: #3b5b96;
+}
+
+
+#faq #faqIndex {
+}
+#faq #faqIndex LI  {
+    margin-top: 4px;
+    margin-left: -24px;
+    color: #3b5b96;
+}
+#faq #faqIndex A, #faq #faqIndex A:hover {
+    font: normal 13px Arial, Helvetica, Sans serif;
+    text-decoration: underline;
+    color: black;
+}
+#faq #faqBody {
+}
+#faq #faqBody H2 {
+    margin-left: -26px;
+}
+#faq #faqBody H2.first {
+    margin-left: -26px;
+}
+#faq #faqBody LI, faqQuestion {
+    margin: 8px 0px 16px 0px;
+    font-weight: bold;
+    list-style-position: inside;
+    margin-left: -26px;
+}
+a.faqQuestion {
+    text-decoration: none;
+    color: #000000;
+}
+a.faqQuestion:hover {
+    text-decoration: none;
+}
+#faq #faqBody DIV {
+    font-weight: normal;
+}
+
+
+
+
+#about {
+    padding: 16px 16px 16px 26px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+}
+#about H1 {
+    font: bold 24px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 0px;
+    margin: 0px 0px 8px 0px;
+}
+#about a {
+    color: #869ccf;
+    font-weight:bold;
+}
+
+
+#privacy {
+    padding: 0px 16px 16px 26px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+}
+#privacy H1 {
+    font: bold 24px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 0px;
+    margin: 0px 0px 8px 0px;
+}
+#privacy H2 {
+    background-image: none;
+    height: 30px;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 0px;
+    margin: 20px 0px -20px 0px;
+}
+#privacy .soft {
+    color: #888888;
+}
+
+
+
+#terms {
+    padding: 0px 16px 16px 26px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+}
+#terms H1 {
+    font: bold 24px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 0px;
+    margin: 0px 0px 8px 0px;
+}
+#terms H2 {
+    background-image: none;
+    height: 30px;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+    padding-left: 0px;
+    margin: 20px 0px -20px 0px;
+}
+#terms .soft {
+    color: #888888;
+}
+
+#locationTracker {
+    padding: 2px 8px 8px 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+}
+
+
+
+
+
+#myAccount {
+}
+#myAccount H1, #myAccount .htit {
+    background: transparent url(../images/icon_write_big.jpg) no-repeat left top;
+    font: bold 24px Arial, Helvetica, Sans serif;
+    margin: 8px 8px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 72px;
+    height: 40px;
+    clear: right;
+}
+#myAccount #caption {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    float: left;
+    margin: -32px 8px;
+    padding-left: 70px;
+    text-align:left;
+    width: 250px;
+    color: #888;
+}
+
+#myAccount .navigationTabs {
+    float: left;
+    height: 32px;
+    clear: both;
+}
+
+
+#myAccount .navigationTabs DIV {
+    border-bottom: 1px solid black;
+    height: 18px;
+    padding: 3px 8px;
+    text-align: center;
+}
+#myAccount .navigationTabs .tab {
+    float: left;
+    font: bold 14px Arial, Helvetica, Sans serif;
+    color: #6f9ed6;
+    background-color: #dae6e9;
+    border-bottom: 1px solid black;
+}
+#myAccount .navigationTabs .tab A, #myAccount .navigationTabs .tab A:hover {
+    color: #6f9ed6;
+}
+#myAccount .navigationTabs .tab_sel {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-bottom: none;
+    padding: 3px 12px;
+}
+#myAccount .navigationTabs .tab_sel A, #myAccount .navigationTabs .tab_sel A:hover {
+    color: black;
+}
+#myAccount .navigationTabs .spacer {
+    float: left;
+    padding: 3px 2px;
+}
+#myAccount .navigationTabs .filler {
+    float: left;
+    padding: 3px 2px;
+    width: 470px;
+}
+
+#myAccount .caption {
+    color: black;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-align: left;
+}
+
+#myAccount .content {
+    margin-top: 16px;
+    margin-left: 80px;
+    margin-right: 40px;
+}
+#myAccount .form .section {
+    margin: 24px 8px 0px 128px;
+    font-weight: bold;
+}
+#myAccount .form .note {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    text-align: center;
+}
+#myAccount .form .entry {
+    height: 25px;
+	padding: 0px 0px 5px 0px;
+}
+#myAccount .form .label, #myAccount .form LABEL {
+    float: left;
+    width: 240px;
+    margin: 4px 8px 0px 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: right;
+}
+#myAccount .form INPUT {
+    width: 200px;
+    height: 18px;
+}
+#myAccount .form SELECT {
+    width: 205px;
+    height: 22px;
+}
+#myAccount .form BUTTON {
+    width: 100px;
+    margin: 4px 8px;
+}
+#myAccount .form INPUT[type=radio], #myAccount .form INPUT.radio {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+#myAccount .form .error {
+    float: left;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+#myAccount .form#formPrivacy {
+}
+
+#myAccount .form#formPrivacy .label, #myAccount .form#formPrivacy LABEL {
+    float: left;
+    width: 600px;
+    margin-left: 120px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: left;
+}
+
+#myAccount .form#formPrivacy .privacy ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#myAccount .form#formPrivacy .privacy ul li {
+    clear: both;
+}
+
+#myAccount .form#formPrivacy .noticesettingsbox {
+    border: 2px solid #F1F4F9;
+    padding: 10px;
+}
+
+#myAccount .form#formPrivacy table.notice_settings {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#myAccount .form#formPrivacy table.notice_settings th {
+    padding-top: 5px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#myAccount .form#formPrivacy table.notice_settings td {
+    line-height: 90%;
+    padding: 5px 10px;
+}
+
+#myAccount .form#formPrivacy table.notice_settings td input {
+    width: 30px;
+    margin: 0;
+}
+
+#myAccount .form#formPrivacy table.notice_settings .notice_type_description {
+    color: #666666;
+    font-size: 80%;
+    font-style: italic;
+}
+
+#myAccount .form .indent1 {
+    margin-left: 120px;
+}
+
+#myAccount .form#formPassword .entry {
+    height: 25px;
+}
+#myAccount .form#formPassword .label, #myAccount .form#formPassword LABEL {
+    width: 170px;
+    text-align: left;
+}
+#myAccount .form#formPassword UL#contactEmailList {
+    width: 400px;
+    margin: 2px 0px;
+    padding: 0px;
+    text-align: left;
+}
+
+#myAccount .form#formPassword #contactEmail UL A {
+    color: #6f9ed6;
+}
+
+#myAccount .form#formPassword #contactEmail UL {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+#myAccount .form#formPassword #contactEmail UL LI .unconfirmed{
+    margin-left: 25px;
+}
+#myAccount .form#formPassword UL LI LABEL {
+    width: 360px;
+    margin: 0px;
+    float: none;
+}
+#myAccount .form#formPassword .note {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    margin-left: 8px;
+    text-align: left;
+}
+
+#myAccount .form#formPassword .entry#contactEmail {
+    height: auto;
+}
+
+#landing .winTitle {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Tooltip styles */
+.tip {
+    background: transparent url(../images/bubble-arrow.gif) no-repeat scroll center left;
+    padding-left: 10px;
+    color: #fff;
+    width: 172px;
+    z-index: 13000;
+    opacity: .9;
+}
+
+.tip-title {
+    font-weight: bold;
+    font-size: 11px;
+    margin: 0;
+    padding: 8px 8px 4px;
+    background-color: #4b90eb;
+}
+
+.tip-text {
+    font-size: 11px;
+    padding: 4px 8px 8px;
+    background-color: #4b90eb;
+    text-align: center;
+}
+
+.tip-text a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Autocompleter styles */
+ul.autocompleter-choices {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #7c7c7c;
+    border-left-color: #c3c3c3;
+    border-right-color: #c3c3c3;
+    border-bottom-color: #ddd;
+    background-color: #fff;
+    text-align: left;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    z-index: 50;
+    background-color: #fff;
+}
+
+ul.autocompleter-choices li {
+    position: relative;
+    margin: -2px 0 0 0;
+    padding: 0.2em 1.5em 0.2em 1em;
+    display: block;
+    float: none !important; 
+    cursor: pointer;
+    font-weight: normal;
+    white-space: nowrap;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+ul.autocompleter-choices li.autocompleter-selected {
+    background-color: #444;
+    color: #fff;
+}
+
+ul.autocompleter-choices span.autocompleter-queried {
+    display: inline;
+    float: none;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
+    color: #9FCFFF;
+}
+
+
+#landing .windowForm {
+    margin: 20px 40px;
+}
+
+#landing .windowForm a {
+    color: blue;
+}
+
+#landing .windowForm form {
+    width: 225px;
+}
+
+#landing .windowForm form label {
+    color: #000000;
+    display: block;
+    font-weight: bold;
+    margin: 5px 0 0 2px;
+    padding: 0;
+}
+
+#landing .windowForm form input.text {
+    border: 1px solid #D4D5D8;
+    height: 16px;
+    padding: 3px 4px;
+    width: 217px;
+}
+
+#landing .windowForm form button {
+    margin-top: 10px;
+}
+
+#landing #footer .links {
+    float: left;
+    line-height: 150%;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+
+#pendingInvitesLayoutBody {
+    margin: 10px 20px;
+    width: 360px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#pendingInvites H1 {
+    background: transparent url(../images/icon_write_big.jpg) no-repeat left top;
+    font: bold 24px Arial, Helvetica, Sans serif;
+    margin: 8px 8px;
+    padding-top: 6px;
+    padding-left: 22px;
+    height: 60px;
+    clear: right;
+}
+
+
+#pendingInvites .caption{
+    float: left;
+    margin: -38px 8px;
+    padding-left: 80px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: left;
+}
+
+#pendingInvitesLayoutBody #list{
+margin-top: 30px;
+font-family:Arial, Helvetica, sans-serif;
+border: 1px solid #000000;
+width: 300px;
+padding: 5px 5px 5px 5px;
+}
+#pendingInvitesLayoutBody #emptyList{
+margin-top: 60px;
+margin-bottom: 40px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:16px;
+font-weight:bold;
+border: 1px solid #000000;
+width: 300px;
+padding: 55px 5px 60px 5px;
+}
+
+.normal {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #888;
+}
+.normal A {
+    text-decoration: underline;
+}
+
+
+/* Widget's Grab Template Style */
+
+#streema-widget-title h2{
+	background: none; 
+	padding-left: 30px; 
+	margin: 20px 0px 0px 0px; 
+	color: #5389E3;
+	height: 20px;
+}
+
+.streema-widget-grab-box{
+	overflow: hidden;
+	font-family: Arial;
+	font-size: 16px;
+	text-align: left;
+	margin-top: 30px;
+}
+.streema-widget-code-box{
+	overflow: hidden;
+	border: solid;
+	border-width: 1px;
+	border-color: #949494;
+	margin-left: 80px;
+	margin-bottom: 30px;
+	background-color: #F9F9F9; 
+	width: 750px;
+}
+.streema-widget-text{
+	overflow:hidden;
+	float: left;
+	margin: 20px 0px 20px 20px;
+	width: 415px;
+}
+.streema-widget-code{
+	margin-top: 20px;
+	width: 410px;
+	height: 77px;
+}
+.streema-widget-perspective{
+	position: relative;
+	float: right;
+	margin-top: 32px;
+	margin-right: 62px;
+}
+.streema-widget-perspective img{
+	top: 32px;
+}
+.streema-widget-preview{
+	overflow: hidden;
+	margin: 31px 60px 0px 0px;
+	width: 255px;
+	height: 167px;
+	float: right;
+	background: url('../widgets/images/shade.perspective.image.gif') no-repeat;
+}
+.streema-widget-embbeded{
+	float:left;
+	overflow: hidden;
+	margin: 0px 0px 0px 91px;
+}
+.streema-widget-finaltext{
+	font-size: 14px;
+	margin-left: 49px;
+	margin-bottom: 39px;
+}
+.streema-widget-finaltext a:hover {
+	text-decoration:underline;
+}
+#statusUpdater #wallPostText{
+	margin: 1px 35px 1px 0;
+	width: 545px;
+	height: 37px;
+}
+
+input#id_honeypot {
+    display: none;
+}
+
+#breadcrumbs{
+    text-align: left;
+    margin: 0 0 10px 73px;
+    color: black;
+    font: bold 13px Arial,Helvetica,Sans serif;
+}
+
+#breadcrumbs a{
+    color: #284885;
+    font: bold 13px Arial,Helvetica,Sans serif;
+}
+
+.listWidgetGrabText{
+    width: 155px;
+    margin: 7px 0 7px 0;
+}
+
+#copyCode > #streemaWidgetCode{
+    overflow: hidden;
+    display: none;
+    width: 158px;
+    height: 138px;
+    margin: 5px 0 5px 0;
+}
+
+#copyCode{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#listWidget{
+    float: left;
+    margin: 0 0 0 16px;
+    width: 155px;
+    font: 14px Arial,Helvetica,Sans serif;
+    text-align: left;
+}
+
+#content404  {
+    font-family: Arial,Helvetica,Sans serif;
+}
+#frameTempPlaylist {
+    width: 252px;
+}
+#frameTempPlaylist .thead {
+    background: transparent url(../images/th_252.jpg) no-repeat;
+    width: 236px;
+    height: 17px;
+    padding: 6px 8px 4px 8px;
+}
+#frameTempPlaylist .tbody {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    height: 229px;
+    padding: 4px 12px;
+}
+#frameTempPlaylist .tfoot {
+    margin: 0px;
+    padding: 0px;
+}
+#frameTempPlaylist .title, #frameTempPlaylist .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+#frameTempPlaylist .thead A:hover {
+    text-decoration: underline;
+}
+#frameTempPlaylist .legend {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    text-align: center;
+    color: #888888;
+    /*margin-right: 8px;*/
+}
+#frameTempPlaylist .tfoot .legend {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    height: 28px;
+}
+#frameTempPlaylist .tfoot .bottom {
+    background: transparent url(../images/tf_252.jpg) no-repeat;
+    height: 12px;
+}
+
+
+
+#frameFavorites {
+    width: 252px;
+    /*height: 314px;*/
+}
+#frameFavorites .thead {
+    background: transparent url(../images/th_252.jpg) no-repeat;
+    width: 236px;
+    height: 17px;
+    padding: 6px 8px 4px 8px;
+}
+#frameFavorites .tbody {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    height: 352px;
+    padding: 4px 12px 4px 5px;
+}
+#frameFavorites .tfoot {
+    margin: 0px;
+    padding: 0px;
+}
+#frameFavorites .title, #frameFavorites .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+#frameFavorites .thead A:hover {
+    text-decoration: underline;
+}
+#frameFavorites .caption {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    text-align: center;
+    color: #888888;
+    margin-right: 8px;
+}
+#frameFavorites .tfoot .legend {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    height: 16px;
+}
+#frameFavorites .tfoot .bottom {
+    background: transparent url(../images/tf_252.jpg) no-repeat;
+    height: 12px;
+}
+
+
+
+#frameHottest {
+    width: 368px;
+}
+#frameHottest .thead {
+    background: transparent url(../images/th_hottest.jpg) no-repeat;
+    padding: 6px 8px 0px 8px;
+}
+#frameHottest .tbody {
+    background: transparent url(../images/tb_hottest.jpg) repeat-y;
+    height: 258px;
+    padding: 4px 12px;
+}
+#frameHottest .tfoot {
+    padding: 0px;
+    margin: 0px;
+}
+#frameHottest .title {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    background-color: #dbdbdb;
+    color: #888888;
+    padding-top: 5px;
+}
+#frameHottest .caption {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    text-align: center;
+    color: #888888;
+    margin-right: 8px;
+}
+#frameHottest .hottestRadios, #frameHottest .hottestRadios_sel  {
+    background: transparent url(../images/tab_hottest.jpg) no-repeat;
+    width: 198px;
+    height: 16px;
+}
+#frameHottest .hottestRadios_sel {
+    background: transparent url(../images/tab_hottest_sel.jpg) no-repeat;
+}
+#frameHottest .mostAdded, #frameHottest .mostAdded_sel {
+    background: transparent url(../images/tab_most_added.jpg) no-repeat;
+    width: 154px;
+    height: 16px;
+}
+#frameHottest .mostAdded_sel {
+    background: transparent url(../images/tab_most_added_sel.jpg) no-repeat;
+}
+#frameHottest .tfoot .bottom {
+    background: transparent url(../images/tf_hottest.jpg) no-repeat;
+    height: 12px;
+    padding: 2px 8px 8px 8px;
+}
+
+
+
+#frameLogin {
+    background: transparent url(../images/back_login.jpg) no-repeat;
+    width: 259px;
+    height: 178px;
+}
+#frameLogin .thead {
+    width: 100%;
+    height: 25px;
+    padding: 6px 8px 4px 8px;
+}
+#frameLogin .tbody {
+    width: 100%;
+    height: 112px;
+    text-align: left;
+    padding: 0px 16px;
+    color: #000000;
+}
+#frameLogin .tfoot {
+    width: 243px;
+    height: 18px;
+    padding: 2px 8px;
+}
+#frameLogin .title {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #ffffff;
+    margin: 4px 8px;
+    text-align: left;
+}
+#frameLogin .caption {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    line-height: 200%;
+    padding: 1px 36px 1px 4px;
+    margin: 1px 0px;
+}
+#frameLogin INPUT {
+    width: 148px;
+    height: 14px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    float: right;
+}
+#frameLogin .spaceLeft {
+    margin-left: 68px;
+}
+#frameLogin INPUT#silentLogin {
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin: 4px 4px 2px 0px;
+}
+#frameLogin BUTTON#buttonLogin {
+    background: transparent url(../images/btn_login.jpg) no-repeat center center;
+    border: none;
+    width: 75px;
+    height: 27px;
+    margin-top: -4px;
+    color: #888888;
+    font-weight: bold;
+}
+#frameLogin .error {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    text-align: center;
+    color: #ff0000;
+    margin: 4px;
+}
+#frameLogin .error {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    text-align: center;
+    color: #ff0000;
+    margin: 4px;
+}
+#frameLogin .tfoot A {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    text-decoration: none;
+}
+
+
+
+#framePlayed {
+    background: transparent url(../images/back_played.jpg) no-repeat center center;
+    width: 255px;
+    height: 251px;
+    margin: 4px;
+}
+#framePlayed .thead {
+    width: 236px;
+    height: 17px;
+    padding: 4px 8px;
+}
+#framePlayed .tbody {
+    height: 208px;
+    padding: 4px 12px;
+}
+#framePlayed .tfoot {
+}
+#framePlayed .title {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    padding: 4px 4px;
+}
+#framePlayed .caption {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    text-align: center;
+    color: #888888;
+    margin-right: 8px;
+}
+#framePlayed *.radioListing {
+    padding-left: 4px;
+}
+
+
+
+#frameMessages {
+    width: 368px;
+    height: 402px;
+}
+#frameMessages .thead {
+    background: transparent url(../images/th_messages.jpg) no-repeat;
+    padding: 8px 8px 0px 8px;
+}
+#frameMessages .tbody {
+    background: transparent url(../images/tb_hottest.jpg) repeat-y;
+    height: 400px;
+    margin-bottom: 0px;
+    padding: 4px 9px;
+}
+#frameMessages .tfoot {
+    margin: 0px;
+    padding: 0px;
+}
+#frameMessages .tfoot .pager {
+    background: transparent url(../images/tb_hottest.jpg) repeat-y;
+    height: 12px;
+    padding: 2px 8px;
+}
+#frameMessages .pager A {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    margin-right: 6px;
+}
+#frameMessages .tfoot .bottom {
+    background: transparent url(../images/tf_hottest.jpg) no-repeat;
+    height: 12px;
+    padding: 2px 8px 8px 8px;
+}
+#frameMessages .thead .tab {
+    width: 100px;
+    height: 16px;
+    background: transparent url(../images/tab.jpg) no-repeat;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #869ccf;
+    padding: 3px 8px 0px 8px;
+}
+#frameMessages .thead .tab A {
+    color: #869ccf;
+}
+#frameMessages .thead .selected {
+    color: #556ea4;
+    background: transparent url(../images/streema.sprite.1.png) -10px -401px no-repeat;
+}
+#frameMessages .thead .selected A {
+    color: #556ea4;
+}
+#frameMessages .title {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    background-color: #dbdbdb;
+    color: #888888;
+    padding-top: 5px;
+}
+#frameMessages .caption {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    text-align: center;
+    color: #888888;
+    margin-right: 8px;
+}
+
+#frameRadioSpotFriends {
+    float: right;
+    margin: 5px 23px 0px 0px;
+}
+
+#frameFriends {
+    margin-top: 5px;
+}
+
+.frameFriends .thead {
+    background: transparent url(../images/th_252.jpg) no-repeat;
+    width: 235px;
+    height: 17px;
+    padding: 8px 10px 2px 10px;
+}
+
+.frameFriends .tbody {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    width: 233px;
+    height: 352px;
+    padding: 4px 12px;
+}
+
+.frameFriends .tfoot {
+    width: 253px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.frameFriends .title, .frameFriends .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+
+.frameFriends .thead A:hover {
+    text-decoration: underline;
+}
+
+.frameFriends .friendsListing LI {
+    padding: 10px 0px;
+    border-bottom: 1px solid silver;
+}
+
+.frameFriends .friendsListing A {
+    text-decoration: underline;
+}
+
+.frameFriends .tfoot .legend {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    height: 16px;
+}
+
+.frameFriends .tfoot .bottom {
+    background: transparent url(../images/tf_252.jpg) no-repeat;
+    height: 12px;
+}
+
+
+
+#frameRadios {
+    width: 295px;
+    height: 264px;
+}
+#frameRadios .thead {
+    background: transparent url(../images/th_295.jpg) no-repeat;
+    padding: 6px 8px 0px 8px;
+}
+#frameRadios .tbody {
+    background: transparent url(../images/tb_295.jpg) repeat-y;
+    height: 202px;
+    margin-bottom: 0px;
+    padding: 2px 8px;
+}
+#frameRadios .tfoot {
+    background: transparent url(../images/tf_295.jpg) no-repeat;
+    width: 279px;
+    height: 12px;
+    padding: 2px 8px;
+}
+#frameRadios .pager A {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    margin-right: 6px;
+}
+#frameRadios .thead .tab {
+    width: 100px;
+    height: 16px;
+    background: transparent url(../images/tab.jpg) no-repeat;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #869ccf;
+    padding: 3px 8px 0px 8px;
+}
+#frameRadios .thead .tab A {
+    color: #869ccf;
+}
+#frameRadios .thead .selected {
+    color: #556ea4;
+    background: transparent url(../images/streema.sprite.1.png) -10px -401px no-repeat;
+}
+#frameRadios .thead .selected A {
+    color: #556ea4;
+}
+#frameRadios .listingFooter {
+    background: transparent url(../images/tb_295.jpg) repeat-y;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    height: 12px;
+    padding: 2px 2px;
+    text-align: right;
+    vertical-align: bottom;
+}
+#frameRadios .listingFooter A {
+    margin-right: 8px;
+    color: #666666;
+}
+
+
+
+#frameReviews {
+    width: 295px;
+}
+#frameReviews .thead {
+    padding: 8px 8px 0px 8px;
+    height: 17px;
+}
+#frameReviews .tbody {
+    background: transparent url(../images/tb_295.jpg) repeat-y;
+    height: 202px;
+    margin-bottom: 0px;
+    padding: 2px 8px;
+}
+#frameReviews .tfoot {
+    background: transparent url(../images/tf_295.jpg) no-repeat;
+    width: 279px;
+    height: 12px;
+    padding: 2px 8px;
+}
+#frameReviews .pager A {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    margin-right: 6px;
+}
+#frameReviews .thead, #frameReviews .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    text-decoration: none;
+}
+#frameReviews .thead .title {
+    color: #556ea4;
+}
+#frameReviews .thead .title1 {
+    width: 78px;
+}
+#frameReviews .thead .title2 {
+    width: 120px;
+}
+#frameReviews .thead .title3 {
+    width: 80px;
+}
+#frameReviews .selected1 {
+    background: transparent url(../images/th_reviews_1.jpg) no-repeat;
+}
+#frameReviews .selected2 {
+    background: transparent url(../images/th_reviews_2.jpg) no-repeat;
+}
+#frameReviews .selected3 {
+    background: transparent url(../images/th_reviews_3.jpg) no-repeat;
+}
+#frameReviews .selected1 .title1 {
+    color: #556ea4;
+}
+#frameReviews .thead .selected A {
+    color: #556ea4;
+}
+#frameReviews .listingFooter {
+    background: transparent url(../images/tb_295.jpg) repeat-y;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    height: 12px;
+    padding: 2px 2px;
+    text-align: right;
+    vertical-align: bottom;
+}
+#frameReviews .listingFooter A {
+    margin-right: 8px;
+    color: #666666;
+}
+
+
+
+#frameTagCloud {
+    width: 609px;
+    height: 134px;
+}
+#frameTagCloud .thead {
+    background: transparent url(../images/th_609.jpg) no-repeat;
+    padding: 6px 8px 0px 8px;
+    height: 19px;
+    text-align: left;
+}
+#frameTagCloud .tbody {
+    background: transparent url(../images/tb_609.jpg) repeat-y;
+    height: 99px;
+    margin-bottom: 0px;
+}
+#frameTagCloud .tfoot {
+    background: transparent url(../images/tf_609.jpg) no-repeat;
+    height: 12px;
+    padding: 2px 8px;
+}
+#frameTagCloud .thead .title {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 4px;
+    text-decoration: none;
+}
+
+
+
+#frameMostListened {
+    width: 261px;
+}
+.userSpotSection #frameMostListened {
+    float: left;
+    padding-left: 170px;
+}
+
+#frameMostListened .thead {
+    background: transparent url(../images/th_261.jpg) no-repeat;
+    width: 245px;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+#frameMostListened .tbody {
+    background: transparent url(../images/tb_261.jpg) repeat-y;
+    height: 360px;
+    padding: 4px 8px 2px 8px;
+}
+#frameMostListened .tbodyCommunity {
+    height: 416px;
+}
+#frameMostListened .tfoot {
+    height: 10px;
+}
+#frameMostListened .title, #frameMostListened .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+#frameMostListened .thead A:hover {
+    text-decoration: underline;
+}
+#frameMostListened .friendsListing LI {
+    padding: 10px;
+    border-bottom: 1px solid silver;
+}
+#frameMostListened .friendsListing A {
+    text-decoration: underline;
+}
+#frameMostListened .pager {
+    background: transparent url(../images/tb_261.jpg) repeat-y;
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: #666666;
+    width: 100%;
+    height: 12px;
+    text-align: right;
+    vertical-align: bottom;
+}
+#frameMostListened .pager A {
+    margin-right: 12px;
+    color: #666666;
+}
+#frameMostListened .tfoot .bottom {
+    background: transparent url(../images/tf_261.jpg) no-repeat;
+    width: 100%;
+    height: 13px;
+}
+
+
+#frameUserSpotFriends {
+    width: 252px;
+    margin-left: 60px;
+}
+#frameUserSpotFriends .thead {
+    background: transparent url(../images/th_252.jpg) no-repeat;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+#frameUserSpotFriends .tbody {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    height: 360px;
+    padding: 4px 10px 1px 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    text-align: left;
+
+}
+#frameUserSpotFriends .tfoot {
+    background: transparent url(../images/tf_252.jpg) repeat-y;
+    height: 10px;
+}
+#frameUserSpotFriends .title, #frameRecentListeners .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+#frameUserSpotFriends .thead A:hover {
+    text-decoration: underline;
+}
+
+
+
+#frameComments {
+    width: 280px;
+}
+#frameComments .thead {
+    background: transparent url(../images/th_280_empty.jpg) no-repeat;
+    height: 11px;
+}
+#frameComments .tbody {
+    background: transparent url(../images/tb_280.jpg) repeat-y;
+    height: 392px;
+    padding: 1px 20px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    text-align: left;
+
+}
+#frameComments .tfoot {
+    background: transparent url(../images/tf_280.jpg) repeat-y;
+    height: 11px;
+}
+
+
+
+#frameFeeds {
+    width: 325px;
+}
+#frameFeeds .thead {
+    background: transparent url(../images/streema.sprite.1.png) -10px -245px no-repeat;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+#frameFeeds .tbody {
+    background: transparent url(../images/tb_325.jpg) repeat-y;
+    height: 360px;
+    padding: 4px 8px 1px 4px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    text-align: left;
+
+}
+#frameFeeds .tfoot {
+    background: transparent url(../images/tf_325.jpg) repeat-y;
+    height: 11px;
+}
+#frameFeeds .title, #frameFeeds .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+#frameFeeds .thead A:hover {
+    text-decoration: underline;
+}
+
+
+
+#frameRecentListeners {
+    width: 252px;
+}
+#frameRecentListeners .thead {
+    background: transparent url(../images/th_252.jpg) no-repeat;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+#frameRecentListeners .tbody {
+    background: transparent url(../images/tb_252.jpg) repeat-y;
+    height: 280px;
+    padding: 4px 10px 1px 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    text-align: left;
+
+}
+#frameRecentListeners .tfoot {
+    background: transparent url(../images/tf_252.jpg) repeat-y;
+    height: 10px;
+}
+#frameRecentListeners .title, #frameRecentListeners .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+#frameRecentListeners .thead A:hover {
+    text-decoration: underline;
+}
+
+#radioSpotTopInfo {
+    overflow: hidden;
+}
+
+#radioSpotTopInfo h3 {
+    color: #888888;
+    margin: 0px;
+}
+
+#radioSpotLeftColumn {
+    clear: left;
+    float: left;
+    width: 220px;
+    margin-left: 14px;
+}
+
+#frameShowInfo,
+#frameRadioInfo {
+    width: 230px;
+}
+
+#frameShowInfo .thead,
+#frameRadioInfo .thead {
+    background: transparent url(../images/streema.sprite.1.png) -10px -168px no-repeat;
+    width: 210px;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+
+#frameShowInfo .tbody,
+#frameRadioInfo .tbody {
+    background: transparent url(../images/tb_radiospot_leftbox.jpg) repeat-y;
+    min-height: 100%;
+	overflow: hidden;
+    padding: 2px 4px;
+}
+#unitLink{
+	margin 10px 0 0 0;
+}
+
+#frameShowInfo .tfoot,
+#frameRadioInfo .tfoot {
+    background: transparent url(../images/streema.sprite.1.png) -10px -290px no-repeat;
+    height: 13px;
+}
+#frameShowInfo .title, #frameShowInfo .thead A,
+#frameRadioInfo .title, #frameRadioInfo .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+
+#frameShowInfo .thead A:hover,
+#frameRadioInfo .thead A:hover {
+    text-decoration: underline;
+}
+
+#frameShowInfo .tbody .entry,
+#frameRadioInfo .tbody .entry {
+    float: left;
+    margin: 2px 8px;
+    width: 196px;
+}
+
+#frameShowInfo .tbody p.description,
+#frameRadioInfo .tbody p.description {
+    margin: 0px;
+    text-align: left;
+    font-style: italic;
+}
+
+#frameShowInfo .tbody label {
+    color: black;
+    float: left;
+    font: 12px Arial,Helvetica,Sans serif;
+    margin-right: 5px;
+    text-align: left;
+}
+
+#frameRadioInfo .tbody LABEL {
+    font: 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: left;
+    float: left;
+}
+#frameShowInfo .tbody .data {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: left;
+}
+
+#frameRadioInfo .tbody .data {
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: black;
+    text-align: left;
+    float: left;
+}
+
+#frameShowInfo .tbody .right,
+#frameRadioInfo .tbody .right{
+	float: right;
+}
+
+#frameShowInfo .tbody UL,
+#frameRadioInfo .tbody UL {
+    text-align: right;
+    display: inline;
+    padding: 0px;
+}
+
+#frameShowInfo .tbody LI,
+#frameRadioInfo .tbody LI {
+    text-align: right;
+    display: inline;
+    list-style: circle inside none;
+    background: transparent url(../images/streema.sprite.1.png) -10px -212.5px no-repeat;
+    padding-left: 9px;
+}
+
+#frameShowInfo .tbody LI:first-child,
+#frameRadioInfo .tbody LI:first-child {
+    background: none;
+    padding-left: 0px;
+}
+
+#frameShowInfo .rating IMG,
+#frameRadioInfo .rating IMG {
+    margin-right: -3px;
+    cursor: pointer;
+}
+
+
+#showFrame .radioListing {
+    width: 187px;
+    height: 140px;
+}
+
+.contentFrame {
+    width: 225px;
+    min-height: 130px;
+}
+.contentFrame .thead {
+    background: transparent url(../images/streema.sprite.1.png) -10px -168px no-repeat;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+.contentFrame .tbody {
+    background: transparent url(../images/tb_radiospot_leftbox.jpg) repeat-y;
+    min-height: 130px;
+}
+.contentFrame .tfoot {
+    background: transparent url(../images/streema.sprite.1.png) -10px -290px no-repeat;
+    height: 13px;
+}
+.contentFrame .title, .contentFrame .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+    text-align: left;
+}
+.contentFrame .thead A:hover {
+    text-decoration: underline;
+}
+
+.contentFrame .tbody UL.radioListing {
+    padding: 4px 12px;
+    margin: 0px;
+}
+
+#radioSpotMiddleColumn {
+    float: left;
+}
+
+#frameWall {
+    width: 325px;
+}
+#frameWall .thead {
+    background: transparent url(../images/streema.sprite.1.png) -10px -245px no-repeat;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+#frameWall .tbody {
+    background: transparent url(../images/tb_325.jpg) repeat-y;
+    height: 660px;
+    padding: 1px 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    text-align: left;
+}
+#frameWall .tbody .registerMsg {
+    margin: 10px 10px 0 10px;
+}
+#frameWall .tbody .registerMsg a {
+    color: blue;
+}
+    
+#frameWall .tfoot {
+    background: transparent url(../images/tf_325.jpg) repeat-y;
+    height: 11px;
+}
+#frameWall .thead .tab {
+    width: 100px;
+    height: 16px;
+    background: transparent url(../images/tab.jpg) no-repeat;
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #869ccf;
+    padding: 3px 8px 0px 8px;
+}
+#frameWall .thead .tab A {
+    color: #869ccf;
+}
+#frameWall .thead .selected {
+    color: #556ea4;
+    background: transparent url(../images/streema.sprite.1.png) -10px -401px no-repeat;
+}
+#frameWall .thead .selected A {
+    color: #556ea4;
+}
+#frameWall .tbody TEXTAREA {
+    overflow: hidden;
+    width: 285px;
+    height: 90px;
+}
+#frameWall .tbody .posts {
+    margin: 12px 8px 8px 8px;
+    height: 475px;
+}
+#frameWall .tbody .postListing {
+    padding: 4px 4px;
+}
+#frameWall .tbody .postListing LI {
+    margin-top: 0px;
+    padding: 2px;
+}
+#frameWall .tfoot .bottom {
+    background: transparent url(../images/tf_325.jpg) no-repeat;
+    height: 10px;
+}
+#frameWall .tfoot .pager {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    color: #444444;
+    background: transparent url(../images/tb_325.jpg) repeat-y;
+    height: 13px;
+    padding: 2px 8px;
+}
+#frameWall .pager A {
+    font: normal 11px Arial, Helvetica, Sans serif;
+    margin-right: 6px;
+}
+
+#frameWall #wallBottomNote {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+#frameNowListening {
+    overflow: hidden;
+}
+
+#frameNowListening .thead {
+    width: 278px;
+    background: transparent url(../images/streema.sprite.1.png) -10px -320px no-repeat;
+    height: 15px;
+    padding: 6px 10px 4px 10px;
+}
+#frameNowListening .tbody {
+    background: transparent url(../images/tb_radiospot_rightbox.jpg) repeat-y;
+    height: 280px;
+    padding: 4px 10px 2px 8px;
+    font: normal 12px Arial, Helvetica, Sans serif;
+    color: #666666;
+    text-align: left;
+    width: 280px;
+}
+#frameNowListening .tfoot {
+    width: 300px;
+    padding: 0px;
+    margin: 0px;
+}
+#frameNowListening .tfoot .bottom {
+    background: transparent url(../images/streema.sprite.1.png) -10px -369px no-repeat;
+    height: 10px;
+}
+#frameNowListening .title, #frameNowListening .thead A {
+    font: bold 12px Arial, Helvetica, Sans serif;
+    color: #888888;
+    margin: 2px 2px;
+    text-decoration: none;
+}
+#frameNowListening .thead A:hover {
+    text-decoration: underline;
+}
+#frameNowListening UL.radioListing {
+}
+
+/* Added for ads targeting */
+.tagCloudFrame {
+    float: right;
+	background-color: #DBDBDB;
+	max-width: 300px;
+	font-weight: bold;
+	color: #888888;
+	font-family: Arial,Helvetica,Sans serif;
+	font-size: 12px;
+    margin: 8px 23px 0px 0px;
+}
+
+.tag{
+	right-margin: 5px;
+	display: inline;
+	font-size: 12px;
+}
