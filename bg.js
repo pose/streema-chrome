@@ -58,7 +58,9 @@ var $ = function (s) {
         } else {
             console.log('Passed timeout check :)! with state: ' +  state);
 
-            streema.eventBus.sendRequest({'method': 'player.playing', 
+            /* We are not completely sure if it is playing or not. So we 
+             * are going to act quietly no to annoy the user */
+            streema.eventBus.sendRequest({'method': 'player.maybe', 
                                         'status': 'ok'});
         }
     };

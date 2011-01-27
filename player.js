@@ -84,9 +84,6 @@ window.addEventListener('load', function () {
 
     });
 
-    eNamed('player.streema.error', function () {
-        streema.eventBus.sendRequest({'method': 'player.error'});
-    });
     
     eNamed('ui.stop', function () {
         player.stop();

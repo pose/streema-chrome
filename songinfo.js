@@ -109,8 +109,10 @@
         }
     });
     
-    eNamed('player.error', function() {
-        clearInterval(timer);
+    eNamed('player.maybe', function() {
+        if (timer !== undefined) {
+            clearInterval(timer);
+        }
     });
 
     updateSongInfo();
