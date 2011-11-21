@@ -28,6 +28,11 @@
 
 var streema;
 
+if ( typeof localStorage == 'undefined' && typeof require != 'undefined' ) {
+    var localStorage = {};
+    var chrome = {};
+}
+
 (function () {
     var getDefaults = function () {
         var config = {};
@@ -88,5 +93,26 @@ var streema;
     }
 
     console.log('config module loaded ok');
+
+
+    if( typeof exports != 'undefined' ) {
+        streema.test = {};
+        streema.test.localStorage = function (value) {
+            if ( arguments.length > 0 ) {
+                localStorage = value;
+                return;
+            }
+            return localStorage;
+        };
+        streema.test.chrome = function (value) {
+            if ( arguments.length > 0 ) {
+                chrome = value;
+                return;
+            }
+            return chrome;
+        };
+        
+        module.exports = streema;
+    }
 }());
 

@@ -45,7 +45,7 @@
         return sprintf('%s <a href="%s" target="_blank">%s</a>',
                     prefix,
                     'http://streema.com' + 
-                    selectedRadio.spotUrl,
+                    selectedRadio.spotUrl + "?source=streema-chrome",
                     selectedRadio.name);
     },
     betterDisplay = function(d) {
