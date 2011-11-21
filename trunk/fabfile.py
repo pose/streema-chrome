@@ -56,8 +56,11 @@ def check():
 
 def _increase_version():
     """Adds a number to the current version number"""
-    f = open('manifest.json','rw+')
+    f = open('manifest.json','r')
     manifest = json.load(f)
+    f.close()
+    
+    f = open('manifest.json','w+')
     manifest_chunks = manifest[u'version'].split('.')
     manifest[u'version'] = '.'.join(manifest_chunks[:-1] + 
         [str(int(manifest_chunks[-1])+1)] )

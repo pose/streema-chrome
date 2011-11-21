@@ -25,6 +25,14 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /*global streema chrome*/
+var streema;
+
+if ( typeof exports != 'undefined' ) {
+    var XMLHttpRequest = {};
+
+    streema = require('./event.js');
+    console.log(streema);
+}
 
 (function () {
 
@@ -64,5 +72,18 @@
 
     updateRadioList();
     console.log('radiolist module loaded ok');
+
+    if ( typeof exports != 'undefined' ) {
+        streema.test = {};
+        streema.test.XMLHttpRequest = function (value) {
+            if ( arguments.length > 0 ) {
+                XMLHttpRequest = value;
+                return;
+            }
+            return XMLHttpRequest;
+        };
+
+        module.exports = streema;
+    }
 
 }());

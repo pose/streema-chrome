@@ -27,6 +27,18 @@
 /*global chrome*/
 var streema;
 
+
+if ( typeof chrome == 'undefined' && typeof require != 'undefined' ) {
+    var chrome = {};
+    streema = {};
+    var configListeners = [];
+    streema.loadConfig = function () {
+        configListeners.forEach(function (l) {
+            l();
+        });
+    };
+}
+
 (function() {
 
     if ( typeof streema === 'undefined') {
@@ -67,6 +79,24 @@ var streema;
     // Add config refresh event to all listeners
     streema.eventBus.addNamedListener('config.refresh', streema.loadConfig);
 
-
     console.log('event module loaded ok');
+
+    if ( typeof exports != 'undefined' ) {
+        streema.test = {};
+        streema.test.chrome = function (value) {
+            if ( arguments.length > 0 ) {
+                chrome = value;
+                return;
+            }
+            return chrome;
+        };
+        
+        streema.test.addConfigListener = function (f) {
+            configListeners.push(f);
+        };
+
+        module.exports = streema;
+    }
+
+
 }());
